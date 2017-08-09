@@ -1,4 +1,4 @@
-**WP Fancybox 3**
+**WP fancyBox3**
 
 The plugin allows to include fancyBox 3 on your Wordpress website
 
