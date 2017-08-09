@@ -5,7 +5,7 @@
  * https://v1rus.ru | alexv1rs@gmail.com
  *
  */
-class WPFancybox
+class WPfancyBox3
 {
     private static $version = '3.2.1';
     private static $key = 'wpfancybox3';
@@ -19,8 +19,9 @@ class WPFancybox
         self::setPluginBasename(plugin_basename($file));
         self::setPluginSettingsUrl(admin_url('options-general.php?page=' . self::getKey()));
 
-        add_action('wp_enqueue_scripts', array($this, 'registerAssets'), 10);
-        add_action('wp_footer', array($this, 'includeScript'), 10);
+        add_action('wp_enqueue_scripts', array($this, 'registerAssets'));
+        add_action('admin_enqueue_scripts', array($this, 'registerAdminAssets'));
+        add_action('wp_footer', array($this, 'includeScript'));
         add_action('admin_menu', array($this, 'addLinkToMenu'));
         add_action('admin_init', array($this, 'registerOptions'));
         add_filter('plugin_action_links_' . self::$plugin_basename, array($this, 'addSettingsLink'));
@@ -95,8 +96,16 @@ class WPFancybox
      */
     public function registerAssets()
     {
-        wp_register_script('jquery-fancybox', self::$plugin_url . 'assets/js/jquery.fancybox.js', array('jquery'), self::getVersion(), true);
-        wp_register_style('jquery-fancybox', self::$plugin_url . 'assets/css/jquery.fancybox.css', false, self::getVersion(), 'screen');
+        wp_register_script('jquery-fancybox', self::getPluginUrl() . 'assets' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'jquery.fancybox.js', array('jquery'), self::getVersion(), true);
+        wp_register_style('jquery-fancybox', self::getPluginUrl() . 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'jquery.fancybox.css', false, self::getVersion(), 'screen');
+    }
+
+    /**
+     *
+     */
+    public function registerAdminAssets()
+    {
+        wp_register_style(self::getKey(), self::getPluginUrl() . 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'admin.css', false, self::getVersion(), 'screen');
     }
 
     /**
@@ -178,7 +187,7 @@ jQuery(document).ready(function(){
 			PLAY_START  : '" . (!empty($options['translation']['start']) ? $options['translation']['start'] : 'Start slideshow') . "',
 			PLAY_STOP   : '" . (!empty($options['translation']['pause']) ? $options['translation']['stop'] : 'Pause slideshow') . "',
 			FULL_SCREEN : '" . (!empty($options['translation']['full']) ? $options['translation']['full'] : 'Full screen') . "',
-			THUMBS      : '" . (!empty($options['translation']['thumb']) ? $options['translation']['thumb'] : 'Thumbnails') . "',
+			THUMBS      : '" . (!empty($options['translation']['thumbs']) ? $options['translation']['thumbs'] : 'Thumbnails') . "',
 		},
 	}";
 
@@ -206,8 +215,8 @@ jQuery(document).ready(function(){
     public function addLinkToMenu()
     {
         add_options_page(
-            'WP Fancybox 3 Settings',
-            'WP Fancybox 3',
+            'WP fancyBox3 Settings',
+            'WP fancyBox3',
             'manage_options',
             self::getKey(),
             array($this, 'renderOptionsPage')
@@ -251,19 +260,19 @@ jQuery(document).ready(function(){
     {
         $options = $this->getOptions();
         $key = self::getKey();
+        wp_enqueue_style(self::getKey());
         ?>
         <div>
             <form method="post" action="options.php">
                 <h1>WP Fancybox 3 Settings</h1>
                 <?php settings_fields(self::getKey()); ?>
                 <?php do_settings_sections(self::getKey()); ?>
-                <table class="wp-list-table widefat fixed striped">
+                <table class="wp-list-table widefat fixed striped wpfancybox3">
                     <tr>
                         <th scope="row"><strong>Custom Css selector</strong></th>
                         <td>
-                            <input type="text" name="<?php echo $key; ?>[selector]"
-                                   placeholder="Custom Css Selector"
-                                   value="<?php echo !empty($options['selector']) ? $options['selector'] : ''; ?>">
+                            <textarea name="<?php echo $key; ?>[selector]"
+                                      placeholder="Custom Css Selector"><?php echo !empty($options['selector']) ? $options['selector'] : ''; ?></textarea>
                         </td>
                         <td>
                             Use your own elements selector instead a plugin variant. <br>
@@ -735,46 +744,24 @@ jQuery(document).ready(function(){
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><strong>Custom Fancybox initialization JavaScript Code</strong></th>
+                        <th scope="row"><strong>Custom initialization JavaScript Code</strong></th>
                         <td>
                             <textarea
                                     name="<?php echo $key; ?>[customOptions]"><?php echo !empty($options['customOptions']) ? $options['customOptions'] : ''; ?></textarea>
                         </td>
                         <td>
-                            This code will be added into Fancybox initialization JavaScript code.
+                            This code will be added into the Fancybox initialization JavaScript code.
                             Be careful and left it blank if you don't understand what you doing.
                         </td>
                     </tr>
                 </table>
                 <?php submit_button(); ?>
             </form>
-            <div class="message">Please see more information on <a href="http://fancyapps.com/" target="_blank">http://fancyapps.com/</a>
+            <div class="wpfancybox3-footer">
+                Please see more documentation and information about license on <a
+                        href="http://fancyapps.com/fancybox/3/" target="_blank">fancyapps.com</a>
             </div>
         </div>
-        <style>
-            .wp-list-table input[type=text],
-            .wp-list-table input[type=number],
-            .wp-list-table textarea,
-            .wp-list-table select {
-                display: block;
-                width: 100%;
-                padding: 5px;
-                max-width: 400px;
-            }
-
-            .wp-list-table textarea {
-                min-height: 200px;
-            }
-
-            .wp-list-table label {
-                padding-right: 5px;
-                display: block;
-            }
-
-            .wp-list-table th {
-                width: 20%;
-            }
-        </style>
         <?php
     }
 }

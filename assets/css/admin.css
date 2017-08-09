@@ -1,0 +1,26 @@
+.wpfancybox3 input[type=text],
+.wpfancybox3 input[type=number],
+.wpfancybox3 textarea,
+.wpfancybox3 select {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    max-width: 400px;
+}
+
+.wpfancybox3 textarea {
+    min-height: 200px;
+}
+
+.wpfancybox3 label {
+    padding-right: 5px;
+    display: block;
+}
+
+.wpfancybox3 th {
+    width: 20%;
+}
+
+.wpfancybox3-footer {
+text-align: center;
+}

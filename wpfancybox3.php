@@ -1,17 +1,13 @@
 <?php
 /*
-Plugin Name: WP FancyBox 3
-Plugin URI: https://v1rus.ru/
-Description: Enable support for the jQuery Fancybox 3 on the your website
-Text Domain: wp_fancybox3
-Domain Path: languages
+Plugin Name: WP fancyBox3
+Description: The plugin allows to include <a href="http://fancyapps.com/fancybox/3/" target=_blank>fancyBox 3</a> on your website
 Version: 1.0
 Author: AGriboed
-Author URI: https://v1rus.ru/
+Author URI: https://v1rus.ru
 */
 
-if (!class_exists('WPFancybox')) {
-    require __DIR__ . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'WPFancybox.php';
-
-    new WPFancybox(__FILE__);
+if (!class_exists('WPfancyBox3')) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'WPfancyBox3.php';
+    new WPfancyBox3(__FILE__);
 }
