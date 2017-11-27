@@ -12,7 +12,7 @@ See more information https://wordpress.org/plugins/wp-fancybox-3/
 
 **Changelog**
 
-1.0.2
+1.0.3
 * Bug fixes
 
 1.0.0

@@ -91,7 +91,7 @@ class Core {
 	public function addLink() {
 		add_options_page(
 			__( 'WP fancyBox3 Settings', static::$key ),
-			_( 'WP fancyBox3', static::$key ),
+			__( 'WP fancyBox3', static::$key ),
 			'manage_options',
 			static::$key,
 			array( $this, 'renderAdmin' )

@@ -4,7 +4,7 @@ Donate link: https://v1rus.ru
 Tags: fancybox, modal, imagezoom, image
 Requires at least: 4.8
 Tested up to: 4.9
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 
 Plugin provides support for Fancybox 3 on whole your website pages. Configure it in two clicks!
