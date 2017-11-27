@@ -1,6 +1,7 @@
 **WP fancyBox3**
 
-The plugin allows to include and configure fancyBox3 on your Wordpress website.
+Plugin provides support for Fancybox 3 on whole your website pages. Configure it in two clicks!
+
 See more information https://wordpress.org/plugins/wp-fancybox-3/
 
 **Installation**
@@ -9,8 +10,10 @@ See more information https://wordpress.org/plugins/wp-fancybox-3/
 3. Configure the plugin
 4. Enjoy!
 
-
 **Changelog**
 
-1.0.0:
-Release
+1.0.2
+* Bug fixes
+
+1.0.0
+* Release
