@@ -90,8 +90,8 @@ class Core
         $options = get_option(static::$key, array());
         $selector = !empty($options['selector']) ? $options['selector'] : 'a[href*=".jpg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpg"]:not(.nolightbox), a[href*=".jpeg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpeg"]:not(.nolightbox), a[href*=".png"]:not(.nolightbox,li.nolightbox>a), area[href*=".png"]:not(.nolightbox)';
 
-        if ( is_admin_bar_showing() ) {
-            $options['baseClass'] = !empty($options['baseClass']) ? $options['baseClass']. ' admin-bar' : 'admin-bar';
+        if (is_admin_bar_showing()) {
+            $options['baseClass'] = !empty($options['baseClass']) ? $options['baseClass'] . ' admin-bar' : 'admin-bar';
         }
 
         include static::$plugin_dir . '/templates/front.php';

@@ -13,7 +13,9 @@ Plugin provides support for fancyBox3 on whole your website pages. Configure it 
 
 Plugin provides support for fancyBox3 on whole your website pages. Configure it in two clicks!
 
-See example
+[See example](http://wordpress.v1rus.ru/fancybox3/)
+[Contribute on GitHub](https://github.com/agriboed/wordpress-wp-fancybox3)
+
 Support and suggestions, [Support](https://v1rus.ru/)
 skype: agriboed
 
