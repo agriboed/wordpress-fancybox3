@@ -3,7 +3,7 @@ Contributors: AGriboed
 Donate link: https://v1rus.ru
 Tags: fancybox, modal, imagezoom, image
 Requires at least: 4.8
-Tested up to: 4.9
+Tested up to: 4.9.1
 Stable tag: 1.0.5
 License: GPLv2 or later
 
@@ -30,6 +30,10 @@ skype: agriboed
 2. Work area
 
 == Changelog ==
+1.0.5
+* Added translations support
+* Bug fixes
+
 = 1.0.2 =
 Bug fixes
 
