@@ -1,6 +1,6 @@
 **WP fancyBox3**
 
-Plugin provides support for Fancybox 3 on whole your website pages. Configure it in two clicks!
+Plugin provides support for fancyBox3 on whole your website pages. Configure it in two clicks!
 
 See more information https://wordpress.org/plugins/wp-fancybox-3/
 

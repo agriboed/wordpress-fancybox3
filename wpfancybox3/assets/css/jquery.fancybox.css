@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.fancybox-container.admin-bar {
+  top: 30px;
+}
+
 body.fancybox-active {
   overflow: hidden; }
 

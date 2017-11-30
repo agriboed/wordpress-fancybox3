@@ -1,18 +1,19 @@
-=== WP Fancybox 3 ===
+=== WP fancyBox3 ===
 Contributors: AGriboed
 Donate link: https://v1rus.ru
-Tags: fancybox, modal, imagezoom, image
+Tags: WP fancyBox3, fancybox3, fancybox 3, fancybox, lightbox, gallery, image, photo, video, flash, overlay, youtube, vimeo, dailymotion, pdf, svg, iframe, swf, jquery, webp
 Requires at least: 4.8
 Tested up to: 4.9.1
 Stable tag: 1.0.5
 License: GPLv2 or later
 
-Plugin provides support for Fancybox 3 on whole your website pages. Configure it in two clicks!
+Plugin provides support for fancyBox3 on whole your website pages. Configure it in two clicks!
 
 == Description ==
 
-Plugin provides support for Fancybox 3 on whole your website pages. Configure it in two clicks!
+Plugin provides support for fancyBox3 on whole your website pages. Configure it in two clicks!
 
+See example
 Support and suggestions, [Support](https://v1rus.ru/)
 skype: agriboed
 
@@ -20,7 +21,7 @@ skype: agriboed
 * English (default)
 
 == Installation ==
-1. Upload the `wpfancybox3` folder to the `/wp-content/plugins/` directory
+1. Upload the `wp-fancybox-3` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the Plugins menu in WordPress. After activation, go to menu "Settings" - "WP Fancybox 3"
 3. Configure the plugin
 4. Enjoy!
@@ -30,7 +31,7 @@ skype: agriboed
 2. Work area
 
 == Changelog ==
-1.0.5
+= 1.0.5 =
 * Added translations support
 * Bug fixes
 
