@@ -2,7 +2,9 @@
 
 Plugin provides support for fancyBox3 on whole your website pages. Configure it in two clicks!
 
-See more information https://wordpress.org/plugins/wp-fancybox-3/
+See more information [https://wordpress.org/plugins/wp-fancybox-3/]
+
+See example [http://wordpress.v1rus.ru/wp-fancybox-3/]
 
 **Installation**
 1. Upload the `wpfancybox3` folder to the `/wp-content/plugins/` directory
