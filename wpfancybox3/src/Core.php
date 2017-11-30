@@ -56,6 +56,9 @@ class Core
         add_action('admin_menu', array($this, 'addOptionsPage'));
         add_action('admin_init', array($this, 'registerOptions'));
         add_filter('plugin_action_links_' . self::$plugin_basename, array($this, 'addSettingsLink'));
+        add_action('plugins_loaded', function () {
+            load_plugin_textdomain(self::$key, false, self::$plugin_dir . '/languages/');
+        });
     }
 
     /**
