@@ -45,15 +45,15 @@ class Core
      */
     public function __construct($plugin_file)
     {
-        static::$plugin_url          = plugins_url('/', $plugin_file);
-        static::$plugin_basename     = plugin_basename($plugin_file);
-        static::$plugin_dir          = plugin_dir_path($plugin_file);
+        static::$plugin_url = plugins_url('/', $plugin_file);
+        static::$plugin_basename = plugin_basename($plugin_file);
+        static::$plugin_dir = plugin_dir_path($plugin_file);
         static::$plugin_settings_url = admin_url('options-general.php?page=' . static::$key);
 
         add_action('wp_enqueue_scripts', array($this, 'registerAssets'));
         add_action('admin_enqueue_scripts', array($this, 'registerAssetsAdmin'));
         add_action('wp_footer', array($this, 'renderFront'), 999);
-        add_action('admin_menu', array($this, 'addLink'));
+        add_action('admin_menu', array($this, 'addOptionsPage'));
         add_action('admin_init', array($this, 'registerOptions'));
         add_filter('plugin_action_links_' . self::$plugin_basename, array($this, 'addSettingsLink'));
     }
@@ -84,17 +84,16 @@ class Core
     {
         wp_enqueue_style('jquery-fancybox');
         wp_enqueue_script('jquery-fancybox');
-
-        $options  = get_option(static::$key, array());
-        $selector = ! empty($options['selector']) ? $options['selector'] : 'a[href*=".jpg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpg"]:not(.nolightbox), a[href*=".jpeg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpeg"]:not(.nolightbox), a[href*=".png"]:not(.nolightbox,li.nolightbox>a), area[href*=".png"]:not(.nolightbox)';
+        $options = get_option(static::$key, array());
+        $selector = !empty($options['selector']) ? $options['selector'] : 'a[href*=".jpg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpg"]:not(.nolightbox), a[href*=".jpeg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpeg"]:not(.nolightbox), a[href*=".png"]:not(.nolightbox,li.nolightbox>a), area[href*=".png"]:not(.nolightbox)';
 
         include static::$plugin_dir . '/templates/front.php';
     }
 
     /**
-     *  Method adds link to options page on main admin area menu
+     *  Method adds a link to admin menu
      */
-    public function addLink()
+    public function addOptionsPage()
     {
         add_options_page(
             __('WP fancyBox3 Settings', static::$key),
@@ -136,9 +135,9 @@ class Core
         wp_enqueue_style(static::$key);
 
         $options = get_option(static::$key, array());
-        $key     = static::$key;
+        $key = static::$key;
 
-        if ( ! file_exists(static::$plugin_dir . '/templates/admin.php')) {
+        if (!file_exists(static::$plugin_dir . '/templates/admin.php')) {
             throw new \RuntimeException('Template not found');
         }
 

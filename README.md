@@ -12,8 +12,13 @@ See more information https://wordpress.org/plugins/wp-fancybox-3/
 
 **Changelog**
 
+1.0.5
+* Added translations support
+* Bug fixes
+
 1.0.3
 * Bug fixes
+* Library has updated to latest version
 
 1.0.0
 * Release
