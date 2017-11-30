@@ -5,7 +5,7 @@ Description: The plugin allows to include <a href="http://fancyapps.com/fancybox
 Version: 1.0.5
 Tags: fancybox, lightbox, gallery, image, photo, video, flash, overlay, youtube, vimeo, dailymotion, pdf, svg, iframe, swf, jquery, webp
 Author: AGriboed
-Author URI: https://v1rus.ru
+Author URI: https://v1rus.ru/
 */
 
 if (!class_exists('WPfancyBox3')) {
