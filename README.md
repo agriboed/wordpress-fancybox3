@@ -14,6 +14,9 @@ See example [http://wordpress.v1rus.ru/wp-fancybox-3/]
 
 **Changelog**
 
+1.0.6
+* Added hooks support
+
 1.0.5
 * Added translations support
 * Bug fixes
