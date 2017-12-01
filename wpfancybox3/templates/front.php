@@ -1,7 +1,6 @@
 <script type="text/javascript">
     jQuery(document).ready(function () {
-        var e = jQuery('<?php echo $selector;?>');
-        <?php
+        var e = jQuery('<?php echo $selector;?>');<?php
         $s = '{';
         $s .= 'loop: ' . (!empty($options['loop']) ? 'true' : 'false') . ',';
         $s .= 'margin: [' . (!empty($options['margin']['v']) ? (float)$options['margin']['v'] : '44') . ',' . (!empty($options['margin']['h']) ? (float)$options['margin']['h'] : '0') . '],';
@@ -75,14 +74,8 @@
         }
 
         $s .= '}';
+        $s = trim($s);
 
-        if (!empty($options['gallery'])) {
-            echo "e.on('click', function() {
-	        jQuery.fancybox.open( e, {$s}, e.index( this ) );
-	return false;});
-	";
-        } else {
-            echo "e.fancybox($s);";
-        }
-        ?>
-    });</script>
+        echo !empty($options['gallery']) ? "e.on('click', function() {jQuery.fancybox.open( e, {$s}, e.index( this ));
+	return false;})" : "e.fancybox($s);";?>});
+</script>

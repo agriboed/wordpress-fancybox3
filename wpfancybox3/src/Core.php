@@ -39,6 +39,11 @@ class Core
     protected static $fancybox_version = '3.2.9';
 
     /**
+     * @var string
+     */
+    protected static $selector = 'a[href*=".jpg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpg"]:not(.nolightbox), a[href*=".jpeg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpeg"]:not(.nolightbox), a[href*=".png"]:not(.nolightbox,li.nolightbox>a), area[href*=".png"]:not(.nolightbox)';
+
+    /**
      * WPfancyBox3 constructor.
      *
      * @param $plugin_file
@@ -55,9 +60,9 @@ class Core
         add_action('wp_footer', array($this, 'renderFront'), 999);
         add_action('admin_menu', array($this, 'addOptionsPage'));
         add_action('admin_init', array($this, 'registerOptions'));
-        add_filter('plugin_action_links_' . self::$plugin_basename, array($this, 'addSettingsLink'));
+        add_filter('plugin_action_links_' . static::$plugin_basename, array($this, 'addSettingsLink'));
         add_action('plugins_loaded', function () {
-            load_plugin_textdomain(self::$key, false, self::$plugin_dir . '/languages/');
+            load_plugin_textdomain(static::$key, false, static::$plugin_dir . '/languages/');
         });
     }
 
@@ -68,7 +73,7 @@ class Core
     {
         wp_enqueue_script('jquery-fancybox', static::$plugin_url . 'assets/js/jquery.fancybox.min.js', array('jquery'),
             static::$fancybox_version, true);
-        wp_enqueue_style('jquery-fancybox', static::$plugin_url . 'assets/css/jquery.fancybox.min.css', false,
+        wp_enqueue_style('jquery-fancybox', static::$plugin_url . 'assets/css/jquery.fancybox.min.css', null,
             static::$fancybox_version, 'screen');
     }
 
@@ -78,23 +83,6 @@ class Core
     public function registerAssetsAdmin()
     {
         wp_register_style(static::$key, static::$plugin_url . 'assets/css/admin.css', null, null, 'screen');
-    }
-
-    /**
-     * Render script on site area
-     */
-    public function renderFront()
-    {
-        wp_enqueue_style('jquery-fancybox');
-        wp_enqueue_script('jquery-fancybox');
-        $options = get_option(static::$key, array());
-        $selector = !empty($options['selector']) ? $options['selector'] : 'a[href*=".jpg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpg"]:not(.nolightbox), a[href*=".jpeg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpeg"]:not(.nolightbox), a[href*=".png"]:not(.nolightbox,li.nolightbox>a), area[href*=".png"]:not(.nolightbox)';
-
-        if (is_admin_bar_showing()) {
-            $options['baseClass'] = !empty($options['baseClass']) ? $options['baseClass'] . ' admin-bar' : 'admin-bar';
-        }
-
-        include static::$plugin_dir . '/templates/front.php';
     }
 
     /**
@@ -120,7 +108,7 @@ class Core
      */
     public function addSettingsLink($links)
     {
-        $links[] = '<a href="' . self::$plugin_settings_url . '">' . __('Settings', static::$key) . '</a>';
+        $links[] = '<a href="' . static::$plugin_settings_url . '">' . __('Settings', static::$key) . '</a>';
 
         return $links;
     }
@@ -143,11 +131,40 @@ class Core
 
         $options = get_option(static::$key, array());
         $key = static::$key;
+        $selector = static::$selector;
+        $template = static::$plugin_dir . '/templates/admin.php';
+        $template = apply_filters('wpfancybox3_admin_template', $template);
 
-        if (!file_exists(static::$plugin_dir . '/templates/admin.php')) {
+        if (!file_exists($template)) {
             throw new \RuntimeException('Template not found');
         }
 
-        include static::$plugin_dir . '/templates/admin.php';
+        include $template;
+    }
+
+    /**
+     * Render script on site area
+     * @throws \RuntimeException
+     */
+    public function renderFront()
+    {
+        wp_enqueue_style('jquery-fancybox');
+        wp_enqueue_script('jquery-fancybox');
+
+        $options = get_option(static::$key, array());
+        $selector = !empty($options['selector']) ? $options['selector'] : static::$selector;
+
+        if (is_admin_bar_showing()) {
+            $options['baseClass'] = !empty($options['baseClass']) ? $options['baseClass'] . ' admin-bar' : 'admin-bar';
+        }
+
+        $template = static::$plugin_dir . '/templates/front.php';
+        $template = apply_filters('wpfancybox3_front_template', $template);
+
+        if (!file_exists($template)) {
+            throw new \RuntimeException('No template file found');
+        }
+
+        include $template;
     }
 }
