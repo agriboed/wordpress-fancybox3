@@ -162,7 +162,7 @@
             <th><strong><?php _e('Small Buttons', $key); ?></strong></th>
             <td>
                 <input type="text"
-                       placeholder="Small Buttons"
+                       placeholder="<?php _e('Small Buttons', $key); ?>"
                        name="<?php echo $key; ?>[smallBtn]"
                        value="<?php echo !empty($options['smallBtn']) ? $options['smallBtn'] : ''; ?>">
             </td>
@@ -382,7 +382,7 @@
                 <label>
                     <?php _e('Speed', $key); ?>
                     <input type="number" min="0" step="1"
-                           placeholder="Speed"
+                           placeholder="<?php _e('Speed'); ?>"
                            name="<?php echo $key; ?>[slideShow][speed]" <?php echo !empty($options['slideShow']['speed']) ? $options['slideShow']['speed'] : '400'; ?>>
                 </label>
             </td>
@@ -414,7 +414,7 @@
                 <label>
                     <?php _e('Close', $key); ?>
                     <input type="text"
-                           placeholder="Close"
+                           placeholder="<?php _e('Close', $key); ?>"
                            name="<?php echo $key; ?>[translation][close]"
                            value="<?php echo !empty($options['translation']['close']) ? $options['translation']['close'] : ''; ?>">
                 </label>
@@ -422,7 +422,7 @@
                 <label>
                     <?php _e('Next', $key); ?>
                     <input type="text"
-                           placeholder="Next"
+                           placeholder="<?php _e('Next', $key); ?>"
                            name="<?php echo $key; ?>[translation][next]"
                            value="<?php echo !empty($options['translation']['next']) ? $options['translation']['next'] : ''; ?>">
                 </label>
@@ -430,14 +430,14 @@
                 <label>
                     <?php _e('Previous', $key); ?>
                     <input
-                            placeholder="Previous"
+                            placeholder="<?php _e('Previous'); ?>"
                             name="<?php echo $key; ?>[translation][prev]"
                             value="<?php echo !empty($options['translation']['prev']) ? $options['translation']['prev'] : ''; ?>">
                 </label>
                 <p></p>
                 <label>
                     <?php _e('Error', $key); ?>
-                    <input placeholder="Error"
+                    <input placeholder="<?php _e('Error', $key); ?>"
                            name="<?php echo $key; ?>[translation][error]"
                            value="<?php echo !empty($options['translation']['error']) ? $options['translation']['error'] : ''; ?>">
                 </label>
@@ -445,7 +445,7 @@
                 <label>
                     <?php _e('Start slideshow', $key); ?>
                     <input type="text"
-                           placeholder="Start slideshow"
+                           placeholder="<?php _e('Start slideshow', $key); ?>"
                            name="<?php echo $key; ?>[translation][start]"
                            value="<?php echo !empty($options['translation']['start']) ? $options['translation']['start'] : ''; ?>">
                 </label>
