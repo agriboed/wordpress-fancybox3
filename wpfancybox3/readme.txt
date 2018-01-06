@@ -4,7 +4,7 @@ Donate link: https://v1rus.ru
 Tags: WP fancyBox3, fancybox3, fancybox 3, fancybox, lightbox, gallery, image, photo, video, flash, overlay, youtube, vimeo, dailymotion, pdf, svg, iframe, swf, jquery, webp
 Requires at least: 4.8
 Tested up to: 4.9.1
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 
 Plugin provides support for fancyBox3 on whole your website pages. Configure it in two clicks!
@@ -21,6 +21,7 @@ skype: agriboed
 
 = Languages =
 * English (default)
+* Русский
 
 == Installation ==
 1. Upload the `wp-fancybox-3` folder to the `/wp-content/plugins/` directory
