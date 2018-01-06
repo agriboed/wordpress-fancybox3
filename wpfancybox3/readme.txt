@@ -33,6 +33,11 @@ skype: agriboed
 2. Work area
 
 == Changelog ==
+= 1.0.7 =
+* Added Russian translation
+* Added Share feature
+* Bug fixes
+
 = 1.0.6 =
 * Added hooks support
 
