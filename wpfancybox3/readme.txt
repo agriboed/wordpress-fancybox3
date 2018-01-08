@@ -7,14 +7,16 @@ Tested up to: 4.9.1
 Stable tag: 1.0.7
 License: GPLv2 or later
 
-Plugin provides support for fancyBox3 on whole your website pages. Configure it in two clicks!
+Plugin provides support for fancyBox3 (jQuery lightbox script for displaying images, videos and more.
+Touch enabled, responsive and fully customizable) on whole your website pages. Configure in few clicks!
 
 == Description ==
 
-Plugin provides support for fancyBox3 on whole your website pages. Configure it in two clicks!
+Plugin provides support for fancyBox3 (jQuery lightbox script for displaying images, videos and more.
+Touch enabled, responsive and fully customizable) on whole your website pages. Configure in few clicks!
 
-[See example](http://wordpress.v1rus.ru/fancybox3/)
-[Contribute on GitHub](https://github.com/agriboed/wordpress-wp-fancybox3)
+[See an example](http://wordpress.v1rus.ru/fancybox3/)
+[Contribute on GitHub](https://github.com/agriboed/wordpress-fancybox3)
 
 Support and suggestions, [Support](https://v1rus.ru/)
 skype: agriboed
@@ -25,13 +27,19 @@ skype: agriboed
 
 == Installation ==
 1. Upload the `wp-fancybox-3` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the Plugins menu in WordPress. After activation, go to menu "Settings" - "WP Fancybox 3"
+2. Activate the plugin through the Plugins menu in WordPress. After activation, go to menu "Settings" - "WP fancyBox3"
 3. Configure the plugin
 4. Enjoy!
 
 == Screenshots ==
 1. Settings
-2. Work area
+2. Settings
+3. Settings
+4. Settings
+5. Images gallery
+6. Image zoom
+7. Sharing
+8. Responsive on any device
 
 == Changelog ==
 = 1.0.7 =
