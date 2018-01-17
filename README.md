@@ -13,7 +13,7 @@ See example [http://wordpress.v1rus.ru/wp-fancybox-3/]
 4. Enjoy!
 
 **Changelog**
-1.0.8
+1.0.9
 * Bug fixes
 
 1.0.7
