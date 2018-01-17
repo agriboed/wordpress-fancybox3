@@ -35,7 +35,7 @@ class Core {
 	/**
 	 * @var string
 	 */
-	protected static $fancybox_version = '3.2.9';
+	protected static $version = '1.0.8';
 
 	/**
 	 * @var string
@@ -75,16 +75,17 @@ class Core {
 	public function registerAssets() {
 		wp_enqueue_script( 'jquery-fancybox', static::$plugin_url . 'assets/js/jquery.fancybox.min.js',
 			array( 'jquery' ),
-			static::$fancybox_version, true );
+			static::$version, true );
+
 		wp_enqueue_style( 'jquery-fancybox', static::$plugin_url . 'assets/css/jquery.fancybox.min.css', null,
-			static::$fancybox_version, 'screen' );
+			static::$version, 'screen' );
 	}
 
 	/**
 	 * Register assets for admin area
 	 */
 	public function registerAssetsAdmin() {
-		wp_register_style( static::$key, static::$plugin_url . 'assets/css/admin.css', null, null, 'screen' );
+		wp_register_style( static::$key, static::$plugin_url . 'assets/css/admin.css', null, static::$version, 'screen' );
 	}
 
 	/**

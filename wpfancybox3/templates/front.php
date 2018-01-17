@@ -1,7 +1,7 @@
 <script type="text/javascript">
   try {
     jQuery(document).ready(function () {
-      var e = jQuery('<?php echo $selector;?>');<?php
+      var e = jQuery('<?php echo $selector;?>')<?php
 		$s = '{';
 		$s .= 'loop: ' . ( ! empty( $options['loop'] ) ? 'true' : 'false' ) . ',';
 		$s .= 'margin: [' . ( ! empty( $options['margin']['v'] ) ? (float) $options['margin']['v'] : '44' ) . ',' . ( ! empty( $options['margin']['h'] ) ? (float) $options['margin']['h'] : '0' ) . '],';

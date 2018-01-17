@@ -4,7 +4,9 @@
 .wpfancybox3 select {
     display: block;
     width: 100%;
-    padding: 5px;
+    padding: 7px;
+    min-height: 40px;
+    border: 1px solid #cfdfe6;
     max-width: 400px;
 }
 

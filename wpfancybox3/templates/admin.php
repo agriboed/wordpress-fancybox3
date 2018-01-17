@@ -168,6 +168,7 @@
             <th><strong><?php _e( 'Small Buttons', $key ); ?></strong></th>
             <td>
                 <input
+                        type="text"
                         placeholder="<?php _e( 'Small Buttons', $key ); ?>"
                         name="<?php echo $key; ?>[smallBtn]"
                         value="<?php echo ! empty( $options['smallBtn'] ) ? $options['smallBtn'] : ''; ?>">
@@ -238,10 +239,10 @@
         <tr>
             <th><strong><?php _e( 'Zoom Opacity', $key ); ?></strong></th>
             <td>
-                <input
-                        placeholder="<?php _e( 'Zoom Opacity', $key ); ?>"
-                        name="<?php echo $key; ?>[zoomOpacity]"
-                        value="<?php echo ! empty( $options['zoomOpacity'] ) ? $options['zoomOpacity'] : ''; ?>">
+                <input type="text"
+                       placeholder="<?php _e( 'Zoom Opacity', $key ); ?>"
+                       name="<?php echo $key; ?>[zoomOpacity]"
+                       value="<?php echo ! empty( $options['zoomOpacity'] ) ? $options['zoomOpacity'] : ''; ?>">
             </td>
             <td>
 				<?php _e( 'Should image change opacity while zooming.
@@ -298,10 +299,10 @@
         <tr>
             <th><strong><?php _e( 'Slide Class', $key ); ?></strong></th>
             <td>
-                <input
-                        placeholder="<?php _e( 'Slide Class', $key ); ?>"
-                        name="<?php echo $key; ?>[slideClass]"
-                        value="<?php echo ! empty( $options['slideClass'] ) ? $options['slideClass'] : ''; ?>">
+                <input type="text"
+                       placeholder="<?php _e( 'Slide Class', $key ); ?>"
+                       name="<?php echo $key; ?>[slideClass]"
+                       value="<?php echo ! empty( $options['slideClass'] ) ? $options['slideClass'] : ''; ?>">
             </td>
             <td>
 				<?php _e( 'Custom CSS class for slide element', $key ); ?>
@@ -310,10 +311,10 @@
         <tr>
             <th><strong><?php _e( 'Base Class', $key ); ?></strong></th>
             <td>
-                <input
-                        placeholder="<?php _e( 'Base Class', $key ); ?>"
-                        name="<?php echo $key; ?>[baseClass]"
-                        value="<?php echo ! empty( $options['baseClass'] ) ? $options['baseClass'] : ''; ?>">
+                <input type="text"
+                       placeholder="<?php _e( 'Base Class', $key ); ?>"
+                       name="<?php echo $key; ?>[baseClass]"
+                       value="<?php echo ! empty( $options['baseClass'] ) ? $options['baseClass'] : ''; ?>">
             </td>
             <td>
 				<?php _e( 'Custom CSS class for layout', $key ); ?>
@@ -386,10 +387,10 @@
                 </label>
                 <p></p>
                 <label>
-					<?php _e( 'Speed', $key ); ?>
                     <input type="number" min="0" step="1"
                            placeholder="<?php _e( 'Speed' ); ?>"
-                           name="<?php echo $key; ?>[slideShow][speed]" <?php echo ! empty( $options['slideShow']['speed'] ) ? $options['slideShow']['speed'] : '400'; ?>>
+                           name="<?php echo $key; ?>[slideShow][speed]"
+                           value="<?php echo ! empty( $options['slideShow']['speed'] ) ? $options['slideShow']['speed'] : '400'; ?>">
                 </label>
             </td>
             <td>
@@ -419,6 +420,7 @@
             <td>
                 <label>
                     <input
+                            type="text"
                             placeholder="<?php _e( 'Close', $key ); ?>"
                             name="<?php echo $key; ?>[translation][close]"
                             value="<?php echo ! empty( $options['translation']['close'] ) ? $options['translation']['close'] : ''; ?>">
@@ -426,6 +428,7 @@
                 <p></p>
                 <label>
                     <input
+                            type="text"
                             placeholder="<?php _e( 'Next', $key ); ?>"
                             name="<?php echo $key; ?>[translation][next]"
                             value="<?php echo ! empty( $options['translation']['next'] ) ? $options['translation']['next'] : ''; ?>">
@@ -433,14 +436,15 @@
                 <p></p>
                 <label>
                     <input
+                            type="text"
                             placeholder="<?php _e( 'Previous' ); ?>"
                             name="<?php echo $key; ?>[translation][prev]"
                             value="<?php echo ! empty( $options['translation']['prev'] ) ? $options['translation']['prev'] : ''; ?>">
                 </label>
                 <p></p>
                 <label>
-
-                    <input placeholder="<?php _e( 'Error', $key ); ?>"
+                    <input type="text"
+                           placeholder="<?php _e( 'Error', $key ); ?>"
                            name="<?php echo $key; ?>[translation][error]"
                            value="<?php echo ! empty( $options['translation']['error'] ) ? $options['translation']['error'] : ''; ?>">
                 </label>
@@ -448,34 +452,36 @@
                 <label>
 
                     <input
+                            type="text"
                             placeholder="<?php _e( 'Start slideshow', $key ); ?>"
                             name="<?php echo $key; ?>[translation][start]"
                             value="<?php echo ! empty( $options['translation']['start'] ) ? $options['translation']['start'] : ''; ?>">
                 </label>
                 <p></p>
                 <label>
-
-                    <input
-                            placeholder="<?php _e( 'Pause slideshow', $key ); ?>"
-                            name="<?php echo $key; ?>[translation][pause]"
-                            value="<?php echo ! empty( $options['translation']['pause'] ) ? $options['translation']['pause'] : ''; ?>">
+                    <input type="text"
+                           placeholder="<?php _e( 'Pause slideshow', $key ); ?>"
+                           name="<?php echo $key; ?>[translation][pause]"
+                           value="<?php echo ! empty( $options['translation']['pause'] ) ? $options['translation']['pause'] : ''; ?>">
                 </label>
                 <p></p>
                 <label>
-                    <input placeholder="<?php _e( 'Full screen', $key ); ?>"
+                    <input type="text"
+                           placeholder="<?php _e( 'Full screen', $key ); ?>"
                            name="<?php echo $key; ?>[translation][full]"
                            value="<?php echo ! empty( $options['translation']['full'] ) ? $options['translation']['full'] : ''; ?>">
                 </label>
                 <p></p>
                 <label>
-
-                    <input placeholder="<?php _e( 'Thumbnails', $key ); ?>"
+                    <input type="text"
+                           placeholder="<?php _e( 'Thumbnails', $key ); ?>"
                            name="<?php echo $key; ?>[translation][thumbs]"
                            value="<?php echo ! empty( $options['translation']['thumbs'] ) ? $options['translation']['thumbs'] : ''; ?>">
                 </label>
                 <p></p>
                 <label>
-                    <input placeholder="<?php _e( 'Share', $key ); ?>"
+                    <input type="text"
+                           placeholder="<?php _e( 'Share', $key ); ?>"
                            name="<?php echo $key; ?>[translation][share]"
                            value="<?php echo ! empty( $options['translation']['share'] ) ? $options['translation']['share'] : ''; ?>">
                 </label>

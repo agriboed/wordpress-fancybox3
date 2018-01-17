@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpfancybox3\n"
-"POT-Creation-Date: 2018-01-07 01:02+0300\n"
-"PO-Revision-Date: 2018-01-07 01:34+0300\n"
+"POT-Creation-Date: 2018-01-17 22:07+0300\n"
+"PO-Revision-Date: 2018-01-17 22:07+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -22,15 +22,15 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: .\n"
 
-#: src/Core.php:90 templates/admin.php:2
+#: src/Core.php:95 templates/admin.php:2
 msgid "WP fancyBox3 Settings"
 msgstr "WP fancyBox3 Настройки"
 
-#: src/Core.php:91
+#: src/Core.php:96
 msgid "WP fancyBox3"
 msgstr "WP fancyBox3"
 
-#: src/Core.php:106
+#: src/Core.php:111
 msgid "Settings"
 msgstr "Настройки"
 
@@ -47,9 +47,9 @@ msgid "Use your own elements selector instead of a plugin variant."
 msgstr "Использовать свой селектор вместо варианта из плагина."
 
 #: templates/admin.php:15 templates/admin.php:61 templates/admin.php:74
-#: templates/admin.php:164 templates/admin.php:179 templates/admin.php:235
-#: templates/admin.php:250 templates/admin.php:295 templates/admin.php:396
-#: templates/admin.php:484
+#: templates/admin.php:164 templates/admin.php:180 templates/admin.php:236
+#: templates/admin.php:251 templates/admin.php:296 templates/admin.php:397
+#: templates/admin.php:489
 msgid "Leave it blank for default value"
 msgstr "Оставьте пустым для значения по умолчанию"
 
@@ -140,15 +140,15 @@ msgstr "Слайдшоу"
 msgid "FullScreen"
 msgstr "Полный экран"
 
-#: templates/admin.php:133 templates/admin.php:478 templates/front.php:70
+#: templates/admin.php:133 templates/admin.php:483 templates/front.php:70
 msgid "Share"
 msgstr "Поделиться"
 
-#: templates/admin.php:139 templates/admin.php:400
+#: templates/admin.php:139 templates/admin.php:401
 msgid "Thumbs"
 msgstr "Миниатюры"
 
-#: templates/admin.php:145 templates/admin.php:422 templates/front.php:62
+#: templates/admin.php:145 templates/admin.php:424 templates/front.php:62
 msgid "Close"
 msgstr "Закрыть"
 
@@ -164,11 +164,11 @@ msgstr "Время idle"
 msgid "Detect \"idle\" time in seconds."
 msgstr "Определить время \"idle\" в секундах."
 
-#: templates/admin.php:168 templates/admin.php:171
+#: templates/admin.php:168 templates/admin.php:172
 msgid "Small Buttons"
 msgstr "Маленькие кнопки"
 
-#: templates/admin.php:176
+#: templates/admin.php:177
 msgid ""
 "Should display buttons at top right corner of the content\n"
 "                    If \"auto\" - they will be created for content having "
@@ -178,19 +178,19 @@ msgstr ""
 "                    Если \"auto\" - они будут показаны для контента с типом "
 "\"html\", \"inline\" or \"ajax\"."
 
-#: templates/admin.php:183
+#: templates/admin.php:184
 msgid "Protect"
 msgstr "Защитить"
 
-#: templates/admin.php:189
+#: templates/admin.php:190
 msgid "Disable right-click and use simple image protection for images"
 msgstr "Отключить клик правой клавишей мышки чтобы защитить картинки"
 
-#: templates/admin.php:193
+#: templates/admin.php:194
 msgid "Modal"
 msgstr "Модальное окно"
 
-#: templates/admin.php:199
+#: templates/admin.php:200
 msgid ""
 "Shortcut to make content \"modal\" - disable keyboard navigation, hide "
 "buttons, etc"
@@ -198,43 +198,43 @@ msgstr ""
 "Сделать контент \"модальным\" - отключить навигацию с клавиатуры, спрятать "
 "кнопки и т.д."
 
-#: templates/admin.php:204
+#: templates/admin.php:205
 msgid "Animation Effect"
 msgstr "Эффект анимации"
 
-#: templates/admin.php:207 templates/admin.php:258
+#: templates/admin.php:208 templates/admin.php:259
 msgid "Disable"
 msgstr "Отключить"
 
-#: templates/admin.php:209
+#: templates/admin.php:210
 msgid "Zoom - zoom images from/to thumbnail"
 msgstr "Увеличивать изображения"
 
-#: templates/admin.php:212 templates/admin.php:261
+#: templates/admin.php:213 templates/admin.php:262
 msgid "Fade"
 msgstr "Затухание"
 
-#: templates/admin.php:215 templates/admin.php:273
+#: templates/admin.php:216 templates/admin.php:274
 msgid "Zoom-in-Out"
 msgstr "Увеличение и отдаление"
 
-#: templates/admin.php:220
+#: templates/admin.php:221
 msgid "Open/close animation type"
 msgstr "Анимация закрытия\\открытия"
 
-#: templates/admin.php:224 templates/admin.php:228
+#: templates/admin.php:225 templates/admin.php:229
 msgid "Animation Duration"
 msgstr "Длительность анимации"
 
-#: templates/admin.php:233
+#: templates/admin.php:234
 msgid "Duration in ms for open/close animation."
 msgstr "Длительность анимации в мс для открытия\\закрытия."
 
-#: templates/admin.php:239 templates/admin.php:242
+#: templates/admin.php:240 templates/admin.php:243
 msgid "Zoom Opacity"
 msgstr "Прозрачность"
 
-#: templates/admin.php:247
+#: templates/admin.php:248
 msgid ""
 "Should image change opacity while zooming.\n"
 "                    If opacity is \"auto\", then opacity will be changed if "
@@ -242,156 +242,156 @@ msgid ""
 "                    aspect ratios."
 msgstr ""
 "Должна ли картинка изменять прозрачность во время зума\n"
-"                    Если значение \"auto\" тогда прозрачность будет "
-"изменена только при различном соотношении сторон миниатюры и картинки."
+"                    Если значение \"auto\" тогда прозрачность будет изменена "
+"только при различном соотношении сторон миниатюры и картинки."
 
-#: templates/admin.php:254
+#: templates/admin.php:255
 msgid "Transition Effect"
 msgstr "Эффект перехода"
 
-#: templates/admin.php:264
+#: templates/admin.php:265
 msgid "Slide"
 msgstr "Слайд"
 
-#: templates/admin.php:267
+#: templates/admin.php:268
 msgid "Circular"
 msgstr "Круговой"
 
-#: templates/admin.php:270
+#: templates/admin.php:271
 msgid "Tube"
 msgstr "Труба"
 
-#: templates/admin.php:276
+#: templates/admin.php:277
 msgid "Rotate"
 msgstr "Повернуть"
 
-#: templates/admin.php:282
+#: templates/admin.php:283
 msgid "Transition effect between slides"
 msgstr "Эффект перехода между слайдами"
 
-#: templates/admin.php:286 templates/admin.php:289
+#: templates/admin.php:287 templates/admin.php:290
 msgid "Transition Duration"
 msgstr "Длительность перехода"
 
-#: templates/admin.php:294
+#: templates/admin.php:295
 msgid "Duration in ms for transition animation."
 msgstr "Длительность в мс для анимации смены слайда."
 
-#: templates/admin.php:299 templates/admin.php:302
+#: templates/admin.php:300 templates/admin.php:303
 msgid "Slide Class"
 msgstr "Класс слайда"
 
-#: templates/admin.php:307
+#: templates/admin.php:308
 msgid "Custom CSS class for slide element"
 msgstr "Свой CSS класс для элемента слайда"
 
-#: templates/admin.php:311 templates/admin.php:314
+#: templates/admin.php:312 templates/admin.php:315
 msgid "Base Class"
 msgstr "Базовый класс"
 
-#: templates/admin.php:319
+#: templates/admin.php:320
 msgid "Custom CSS class for layout"
 msgstr "Свой CSS класс для разметки"
 
-#: templates/admin.php:323
+#: templates/admin.php:324
 msgid "Auto Focus"
 msgstr "Авто фокусировка"
 
-#: templates/admin.php:329
+#: templates/admin.php:330
 msgid "Try to focus on the first focusable element after opening"
 msgstr "Пытаться сфокусироваться на элементе после открытия"
 
-#: templates/admin.php:333
+#: templates/admin.php:334
 msgid "Back Focus"
 msgstr "Обратный фокус"
 
-#: templates/admin.php:339
+#: templates/admin.php:340
 msgid "Put focus back to active element after closing"
 msgstr "Вернуть фокус обратно после закрытия"
 
-#: templates/admin.php:343
+#: templates/admin.php:344
 msgid "Trap Focus"
 msgstr "Запретить фокусировку"
 
-#: templates/admin.php:349
+#: templates/admin.php:350
 msgid "Do not let user to focus on element outside modal content"
 msgstr ""
 "Не позволять пользователю фокусироваться на элемента если открыто модальное "
 "окно"
 
-#: templates/admin.php:353
+#: templates/admin.php:354
 msgid "FullScreen Auto Start"
 msgstr "Авто старт в полноэкранном режиме"
 
-#: templates/admin.php:362
+#: templates/admin.php:363
 msgid "Touch"
 msgstr "Прикосновние"
 
-#: templates/admin.php:365
+#: templates/admin.php:366
 msgid "Allow to drag content vertically"
 msgstr "Позволить листать контент вертикально"
 
-#: templates/admin.php:371
+#: templates/admin.php:372
 msgid "Continue movement after releasing mouse/touch when panning"
 msgstr "Продолжать движение после отпускания кнопки мыши"
 
-#: templates/admin.php:380
+#: templates/admin.php:381
 msgid "Slide Show"
 msgstr "Слайдшоу"
 
-#: templates/admin.php:383
+#: templates/admin.php:384
 msgid "Auto Start"
 msgstr "Автостарт"
 
-#: templates/admin.php:389 templates/admin.php:391
+#: templates/admin.php:391
 msgid "Speed"
 msgstr "Скорость"
 
-#: templates/admin.php:403
+#: templates/admin.php:404
 msgid "Display thumbnails on opening"
 msgstr "Показывать миниатюры при открытии"
 
-#: templates/admin.php:409
+#: templates/admin.php:410
 msgid "Hide thumbnail grid when closing animation starts"
 msgstr "Скрывать миниатюры когда анимация закрытия стартовала"
 
-#: templates/admin.php:418
+#: templates/admin.php:419
 msgid "Translations"
 msgstr "Переводы"
 
-#: templates/admin.php:429 templates/front.php:63
+#: templates/admin.php:432 templates/front.php:63
 msgid "Next"
 msgstr "Вперед"
 
-#: templates/admin.php:436 templates/front.php:64
+#: templates/admin.php:440 templates/front.php:64
 msgid "Previous"
 msgstr "Назад"
 
-#: templates/admin.php:443
+#: templates/admin.php:447
 msgid "Error"
 msgstr "Ошибка"
 
-#: templates/admin.php:451 templates/front.php:66
+#: templates/admin.php:456 templates/front.php:66
 msgid "Start slideshow"
 msgstr "Запустить слайдшоу"
 
-#: templates/admin.php:459 templates/front.php:67
+#: templates/admin.php:463 templates/front.php:67
 msgid "Pause slideshow"
 msgstr "Остановить слайдшоу"
 
-#: templates/admin.php:465 templates/front.php:68
+#: templates/admin.php:470 templates/front.php:68
 msgid "Full screen"
 msgstr "Полный экран"
 
-#: templates/admin.php:472 templates/front.php:69
+#: templates/admin.php:477 templates/front.php:69
 msgid "Thumbnails"
 msgstr "Миниатюры"
 
-#: templates/admin.php:488
+#: templates/admin.php:493
 msgid "Custom initialization JavaScript Code"
 msgstr "Свой скрипт инициализации JS"
 
-#: templates/admin.php:494
+#: templates/admin.php:499
 msgid ""
 "This code will be added into the Fancybox initialization JavaScript code.\n"
 "                    Be careful and left it blank if you don't understand "
@@ -401,7 +401,7 @@ msgstr ""
 "                    \n"
 "Будьте осторожны и оставьте поле пустым, если не уверены что делаете."
 
-#: templates/admin.php:502
+#: templates/admin.php:507
 msgid ""
 "Please see more documentation and information about license on <a\n"
 "            href=\"http://fancyapps.com/fancybox/3/\" target=\"_blank"
