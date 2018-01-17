@@ -12,7 +12,8 @@ See example [http://wordpress.v1rus.ru/wp-fancybox-3/]
 3. Configure the plugin
 4. Enjoy!
 
-**Changelog**
+**Changelog*
+
 1.0.9
 * Bug fixes
 
