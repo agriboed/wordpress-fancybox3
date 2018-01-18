@@ -14,6 +14,9 @@ See example [http://wordpress.v1rus.ru/wp-fancybox-3/]
 
 **Changelog*
 
+1.0.10
+* Added support for image caption
+
 1.0.9
 * Bug fixes
 

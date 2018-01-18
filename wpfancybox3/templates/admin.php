@@ -390,7 +390,7 @@
                     <input type="number" min="0" step="1"
                            placeholder="<?php _e( 'Speed' ); ?>"
                            name="<?php echo $key; ?>[slideShow][speed]"
-                           value="<?php echo ! empty( $options['slideShow']['speed'] ) ? $options['slideShow']['speed'] : '400'; ?>">
+                           value="<?php echo ! empty( $options['slideShow']['speed'] ) ? $options['slideShow']['speed'] : ''; ?>">
                 </label>
             </td>
             <td>

@@ -7,6 +7,7 @@ namespace WPFancyBox3;
  * @package WPFancyBox3
  */
 class Core {
+
 	/**
 	 * @var string
 	 */
@@ -35,7 +36,7 @@ class Core {
 	/**
 	 * @var string
 	 */
-	protected static $version = '1.0.8';
+	protected static $version = '1.0.10';
 
 	/**
 	 * @var string
@@ -48,6 +49,7 @@ class Core {
 	 * @param $plugin_file
 	 */
 	public function __construct( $plugin_file ) {
+
 		static::$plugin_url          = plugins_url( '/', $plugin_file );
 		static::$plugin_basename     = plugin_basename( $plugin_file );
 		static::$plugin_dir          = plugin_dir_path( $plugin_file );
@@ -58,8 +60,9 @@ class Core {
 		add_action( 'wp_footer', array( $this, 'renderFront' ), 999 );
 		add_action( 'admin_menu', array( $this, 'addOptionsPage' ) );
 		add_action( 'admin_init', array( $this, 'registerOptions' ) );
-		add_filter( 'plugin_action_links_' . static::$plugin_basename, array( $this, 'addSettingsLink' ) );
 		add_action( 'plugins_loaded', array( $this, 'loadTranslations' ) );
+		add_filter( 'plugin_action_links_' . static::$plugin_basename, array( $this, 'addSettingsLink' ) );
+		add_filter( 'img_caption_shortcode', array( $this, 'imgCaption' ), 10, 3 );
 	}
 
 	/**
@@ -85,7 +88,8 @@ class Core {
 	 * Register assets for admin area
 	 */
 	public function registerAssetsAdmin() {
-		wp_register_style( static::$key, static::$plugin_url . 'assets/css/admin.css', null, static::$version, 'screen' );
+		wp_register_style( static::$key, static::$plugin_url . 'assets/css/admin.css', null, static::$version,
+			'screen' );
 	}
 
 	/**
@@ -135,7 +139,7 @@ class Core {
 		$template = apply_filters( 'wpfancybox3_admin_template', $template );
 
 		if ( ! file_exists( $template ) ) {
-			throw new \RuntimeException( 'Template not found' );
+			throw new \RuntimeException( 'No template file found' );
 		}
 
 		include $template;
@@ -164,5 +168,59 @@ class Core {
 		}
 
 		include $template;
+	}
+
+	/**
+	 * Modify media tag and pass caption into a link
+	 *
+	 * @param $a
+	 * @param $attr
+	 * @param $content
+	 *
+	 * @return mixed|string
+	 */
+	public function imgCaption( $a, array $attr = array(), $content ) {
+		$content = preg_replace( '/href=/', ' data-caption="' . esc_html( $attr['caption'] ) . '" href=$1',
+			$content );
+
+		// code below is copied from \wp-includes\media.php
+		$atts = shortcode_atts( array(
+			'id'      => '',
+			'align'   => 'alignnone',
+			'width'   => '',
+			'caption' => '',
+			'class'   => '',
+		), $attr, 'caption' );
+
+		$atts['width'] = (int) $atts['width'];
+
+		if ( $atts['width'] < 1 || empty( $atts['caption'] ) ) {
+			return $content;
+		}
+
+		if ( ! empty( $atts['id'] ) ) {
+			$atts['id'] = 'id="' . esc_attr( sanitize_html_class( $atts['id'] ) ) . '" ';
+		}
+
+		$class = trim( 'wp-caption ' . $atts['align'] . ' ' . $atts['class'] );
+
+		$html5         = current_theme_supports( 'html5', 'caption' );
+		$width         = $html5 ? $atts['width'] : ( 10 + $atts['width'] );
+		$caption_width = apply_filters( 'img_caption_shortcode_width', $width, $atts, $content );
+		$style         = '';
+
+		if ( $caption_width ) {
+			$style = 'style="max-width: ' . (int) $caption_width . 'px" ';
+		}
+
+		if ( $html5 ) {
+			$html = '<figure ' . $atts['id'] . $style . 'class="' . esc_attr( $class ) . '">'
+			        . do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $atts['caption'] . '</figcaption></figure>';
+		} else {
+			$html = '<div ' . $atts['id'] . $style . 'class="' . esc_attr( $class ) . '">'
+			        . do_shortcode( $content ) . '<p class="wp-caption-text">' . $atts['caption'] . '</p></div>';
+		}
+
+		return $html;
 	}
 }

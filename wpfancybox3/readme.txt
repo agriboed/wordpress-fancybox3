@@ -4,7 +4,7 @@ Donate link: https://v1rus.ru
 Tags: WP fancyBox3, fancybox3, fancybox 3, fancybox, lightbox, gallery, image, photo, video, flash, overlay, youtube, vimeo, dailymotion, pdf, svg, iframe, swf, jquery, webp
 Requires at least: 4.8
 Tested up to: 4.9.2
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv2 or later
 
 Plugin provides support for fancyBox3 (jQuery lightbox script for displaying images, videos and more.
@@ -42,6 +42,9 @@ skype: agriboed
 8. Settings
 
 == Changelog ==
+= 1.0.10 =
+* Added support for image caption
+
 = 1.0.9 =
 * Bug fixes
 
