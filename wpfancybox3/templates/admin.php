@@ -1,510 +1,513 @@
 <form method="post" action="options.php">
-    <h1><?php _e( 'WP fancyBox3 Settings', $key ); ?></h1>
-	<?php settings_fields( $key ); ?>
-	<?php do_settings_sections( $key ); ?>
+    <h1><?php esc_html_e('WP fancyBox3 Settings', 'wpfancybox3'); ?></h1>
+    <?php settings_fields('wpfancybox3'); ?>
+    <?php do_settings_sections('wpfancybox3'); ?>
+
     <table class="wp-list-table widefat fixed striped wpfancybox3">
         <tr>
-            <th><strong><?php _e( 'Custom selector', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Custom selector', 'wpfancybox3'); ?></strong></th>
             <td>
-                <textarea name="<?php echo $key; ?>[selector]"
-                          placeholder="<?php _e( 'Custom Selector',
-	                          $key ); ?>"><?php echo ! empty( $options['selector'] ) ? $options['selector'] : ''; ?></textarea>
+                <textarea name="wpfancybox3[selector]"
+                          placeholder="<?php esc_html_e('Custom Selector',
+                              'wpfancybox3'); ?>"><?php echo ! empty($options['selector']) ? esc_html($options['selector']) : ''; ?></textarea>
             </td>
             <td>
-				<?php _e( 'Use your own elements selector instead of a plugin variant.', $key ); ?> <br>
-				<?php _e( 'Leave it blank for default value', $key ); ?>
+                <?php esc_html_e('Use your own elements selector instead of a plugin variant.', 'wpfancybox3'); ?> <br>
+                <?php esc_html_e('Leave it blank for default value', 'wpfancybox3'); ?>
                 <br>
                 <small>
-					<?php echo $selector; ?>
+                    <?php echo $selector; ?>
                 </small>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Create a gallery', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Create a gallery', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[gallery]" <?php echo ! empty( $options['gallery'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[gallery]" <?php echo ! empty($options['gallery']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Combine all images on a page in one gallery', $key ); ?>
+                <?php esc_html_e('Combine all images on a page in one gallery', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Loop', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Loop', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[loop]" <?php echo ! empty( $options['loop'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[loop]" <?php echo ! empty($options['loop']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Enable infinite gallery navigation', $key ); ?>
+                <?php esc_html_e('Enable infinite gallery navigation', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Margin', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Margin', 'wpfancybox3'); ?></strong></th>
             <td>
                 <label>
                     <input type="number"
-                           placeholder="<?php _e( 'Vertical', $key ); ?>"
-                           name="<?php echo $key; ?>[margin][v]"
-                           value="<?php echo ! empty( $options['margin']['v'] ) ? $options['margin']['v'] : ''; ?>">
+                           placeholder="<?php esc_html_e('Vertical', 'wpfancybox3'); ?>"
+                           name="wpfancybox3[margin][v]"
+                           value="<?php echo ! empty($options['margin']['v']) ? esc_attr($options['margin']['v']) : ''; ?>">
                 </label>
                 <p></p>
                 <label>
                     <input type="number"
-                           placeholder="<?php _e( 'Horizontal', $key ); ?>"
-                           name="<?php echo $key; ?>[margin][h]"
-                           value="<?php echo ! empty( $options['margin']['h'] ) ? $options['margin']['h'] : ''; ?>">
+                           placeholder="<?php esc_html_e('Horizontal', 'wpfancybox3'); ?>"
+                           name="wpfancybox3[margin][h]"
+                           value="<?php echo ! empty($options['margin']['h']) ? esc_attr($options['margin']['h']) : ''; ?>">
                 </label>
             </td>
             <td>
-				<?php _e( 'Space around image, ignored if zoomed-in or viewport smaller than 800px.', $key ); ?><br>
-				<?php _e( 'Leave it blank for default value', $key ); ?>
+                <?php esc_html_e('Space around image, ignored if zoomed-in or viewport smaller than 800px.',
+                    'wpfancybox3'); ?><br>
+                <?php esc_html_e('Leave it blank for default value', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Gutter', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Gutter', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="number"
-                       placeholder="<?php _e( 'Gutter', $key ); ?>"
-                       name="<?php echo $key; ?>[gutter]"
-                       value="<?php echo ! empty( $options['gutter'] ) ? $options['gutter'] : ''; ?>">
+                       placeholder="<?php esc_html_e('Gutter', 'wpfancybox3'); ?>"
+                       name="wpfancybox3[gutter]"
+                       value="<?php echo ! empty($options['gutter']) ? esc_attr($options['gutter']) : ''; ?>">
             </td>
             <td>
-				<?php _e( 'Horizontal space between slides.', $key ); ?><br>
-				<?php _e( 'Leave it blank for default value', $key ); ?>
+                <?php esc_html_e('Horizontal space between slides.', 'wpfancybox3'); ?><br>
+                <?php esc_html_e('Leave it blank for default value', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Keyboard', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Keyboard', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[keyboard]" <?php echo ! empty( $options['keyboard'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[keyboard]" <?php echo ! empty($options['keyboard']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Enable keyboard navigation', $key ); ?>
+                <?php esc_html_e('Enable keyboard navigation', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Arrows', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Arrows', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[arrows]" <?php echo ! empty( $options['arrows'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[arrows]" <?php echo ! empty($options['arrows']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Should display navigation arrows at the screen edges', $key ); ?>
+                <?php esc_html_e('Should display navigation arrows at the screen edges', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Infobar', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Infobar', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[infobar]" <?php echo ! empty( $options['infobar'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[infobar]" <?php echo ! empty($options['infobar']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Should display infobar (counter and arrows at the top)', $key ); ?>
+                <?php esc_html_e('Should display infobar (counter and arrows at the top)', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Toolbar', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Toolbar', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[toolbar]" <?php echo ! empty( $options['toolbar'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[toolbar]" <?php echo ! empty($options['toolbar']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Should display toolbar (buttons at the top)', $key ); ?>
+                <?php esc_html_e('Should display toolbar (buttons at the top)', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Buttons', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Buttons', 'wpfancybox3'); ?></strong></th>
             <td>
                 <label>
-					<?php _e( 'SlideShow', $key ); ?>
+                    <?php esc_html_e('SlideShow', 'wpfancybox3'); ?>
                     <input type="checkbox"
-                           name="<?php echo $key; ?>[buttons][slideShow]" <?php echo ! empty( $options['buttons']['slideShow'] ) ? 'checked' : ''; ?>>
+                           name="wpfancybox3[buttons][slideShow]" <?php echo ! empty($options['buttons']['slideShow']) ? 'checked' : ''; ?>>
                 </label>
                 <p></p>
                 <label>
-					<?php _e( 'FullScreen', $key ); ?>
+                    <?php esc_html_e('FullScreen', 'wpfancybox3'); ?>
                     <input type="checkbox"
-                           name="<?php echo $key; ?>[buttons][fullScreen]" <?php echo ! empty( $options['buttons']['fullScreen'] ) ? 'checked' : ''; ?>>
+                           name="wpfancybox3[buttons][fullScreen]" <?php echo ! empty($options['buttons']['fullScreen']) ? 'checked' : ''; ?>>
                 </label>
                 <p></p>
                 <label>
-					<?php _e( 'Share', $key ); ?>
+                    <?php esc_html_e('Share', 'wpfancybox3'); ?>
                     <input type="checkbox"
-                           name="<?php echo $key; ?>[buttons][share]" <?php echo ! empty( $options['buttons']['share'] ) ? 'checked' : ''; ?>>
+                           name="wpfancybox3[buttons][share]" <?php echo ! empty($options['buttons']['share']) ? 'checked' : ''; ?>>
                 </label>
                 <p></p>
                 <label>
-					<?php _e( 'Thumbs', $key ); ?>
+                    <?php esc_html_e('Thumbs', 'wpfancybox3'); ?>
                     <input type="checkbox"
-                           name="<?php echo $key; ?>[buttons][thumbs]" <?php echo ! empty( $options['buttons']['thumbs'] ) ? 'checked' : ''; ?>>
+                           name="wpfancybox3[buttons][thumbs]" <?php echo ! empty($options['buttons']['thumbs']) ? 'checked' : ''; ?>>
                 </label>
                 <p></p>
                 <label>
-					<?php _e( 'Close', $key ); ?>
+                    <?php esc_html_e('Close', 'wpfancybox3'); ?>
                     <input type="checkbox"
-                           name="<?php echo $key; ?>[buttons][close]" <?php echo ! empty( $options['buttons']['close'] ) ? 'checked' : ''; ?>>
+                           name="wpfancybox3[buttons][close]" <?php echo ! empty($options['buttons']['close']) ? 'checked' : ''; ?>>
                 </label>
             </td>
             <td>
-				<?php _e( 'What buttons should appear in the top right corner', $key ); ?>
+                <?php esc_html_e('What buttons should appear in the top right corner', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'idle Time', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('idle Time', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="number"
-                       placeholder="<?php _e( 'idle Time', $key ); ?>"
-                       name="<?php echo $key; ?>[idleTime]" min="0" step="1"
-                       value="<?php echo ! empty( $options['idleTime'] ) ? $options['idleTime'] : ''; ?>">
+                       placeholder="<?php esc_html_e('idle Time', 'wpfancybox3'); ?>"
+                       name="wpfancybox3[idleTime]" min="0" step="1"
+                       value="<?php echo ! empty($options['idleTime']) ? esc_attr($options['idleTime']) : ''; ?>">
             </td>
             <td>
-				<?php _e( 'Detect "idle" time in seconds.', $key ); ?><br>
-				<?php _e( 'Leave it blank for default value', $key ); ?>
+                <?php esc_html_e('Detect "idle" time in seconds.', 'wpfancybox3'); ?><br>
+                <?php esc_html_e('Leave it blank for default value', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Small Buttons', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Small Buttons', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input
                         type="text"
-                        placeholder="<?php _e( 'Small Buttons', $key ); ?>"
-                        name="<?php echo $key; ?>[smallBtn]"
-                        value="<?php echo ! empty( $options['smallBtn'] ) ? $options['smallBtn'] : ''; ?>">
+                        placeholder="<?php esc_html_e('Small Buttons', 'wpfancybox3'); ?>"
+                        name="wpfancybox3[smallBtn]"
+                        value="<?php echo ! empty($options['smallBtn']) ? esc_attr($options['smallBtn']) : ''; ?>">
             </td>
             <td>
-				<?php _e( 'Should display buttons at top right corner of the content
-                    If "auto" - they will be created for content having type "html", "inline" or "ajax".', $key ); ?>
+                <?php esc_html_e('Should display buttons at top right corner of the content
+                    If "auto" - they will be created for content having type "html", "inline" or "ajax".',
+                    'wpfancybox3'); ?>
                 <br>
-				<?php _e( 'Leave it blank for default value', $key ); ?>
+                <?php esc_html_e('Leave it blank for default value', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Protect', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Protect', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[protect]" <?php echo ! empty( $options['protect'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[protect]" <?php echo ! empty($options['protect']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Disable right-click and use simple image protection for images', $key ); ?>
+                <?php esc_html_e('Disable right-click and use simple image protection for images', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Modal', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Modal', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[modal]" <?php echo ! empty( $options['modal'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[modal]" <?php echo ! empty($options['modal']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Shortcut to make content "modal" - disable keyboard navigation, hide buttons, etc',
-					$key ); ?>
+                <?php esc_html_e('Shortcut to make content "modal" - disable keyboard navigation, hide buttons, etc',
+                    $key); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Animation Effect', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Animation Effect', 'wpfancybox3'); ?></strong></th>
             <td>
-                <select name="<?php echo $key; ?>[animationEffect]">
-                    <option><?php _e( 'Disable', $key ); ?></option>
-                    <option value="zoom" <?php echo ( ! empty( $options['animationEffect'] ) && $options['animationEffect'] === 'zoom' ) ? 'selected' : ''; ?>>
-						<?php _e( 'Zoom - zoom images from/to thumbnail', $key ); ?>
+                <select name="wpfancybox3[animationEffect]">
+                    <option><?php esc_html_e('Disable', 'wpfancybox3'); ?></option>
+                    <option value="zoom" <?php echo ( ! empty($options['animationEffect']) && $options['animationEffect'] === 'zoom') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom - zoom images from/to thumbnail', 'wpfancybox3'); ?>
                     </option>
-                    <option value="fade" <?php echo ( ! empty( $options['animationEffect'] ) && $options['animationEffect'] === 'fade' ) ? 'selected' : ''; ?>>
-						<?php _e( 'Fade', $key ); ?>
+                    <option value="fade" <?php echo ( ! empty($options['animationEffect']) && $options['animationEffect'] === 'fade') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Fade', 'wpfancybox3'); ?>
                     </option>
-                    <option value="zoom-in-out" <?php echo ( ! empty( $options['animationEffect'] ) && $options['animationEffect'] === 'zoom-in-out' ) ? 'selected' : ''; ?>>
-						<?php _e( 'Zoom-in-Out', $key ); ?>
+                    <option value="zoom-in-out" <?php echo ( ! empty($options['animationEffect']) && $options['animationEffect'] === 'zoom-in-out') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom-in-Out', 'wpfancybox3'); ?>
                     </option>
                 </select>
             </td>
             <td>
-				<?php _e( 'Open/close animation type', $key ); ?>
+                <?php esc_html_e('Open/close animation type', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Animation Duration', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Animation Duration', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="number"
                        min="0" step="1"
-                       placeholder="<?php _e( 'Animation Duration', $key ); ?>"
-                       name="<?php echo $key; ?>[animationDuration]"
-                       value="<?php echo ! empty( $options['animationDuration'] ) ? $options['animationDuration'] : ''; ?>">
+                       placeholder="<?php esc_html_e('Animation Duration', 'wpfancybox3'); ?>"
+                       name="wpfancybox3[animationDuration]"
+                       value="<?php echo ! empty($options['animationDuration']) ? esc_attr($options['animationDuration']) : ''; ?>">
             </td>
             <td>
-				<?php _e( 'Duration in ms for open/close animation.', $key ); ?>
+                <?php esc_html_e('Duration in ms for open/close animation.', 'wpfancybox3'); ?>
                 <br>
-				<?php _e( 'Leave it blank for default value', $key ); ?>
+                <?php esc_html_e('Leave it blank for default value', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Zoom Opacity', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Zoom Opacity', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="text"
-                       placeholder="<?php _e( 'Zoom Opacity', $key ); ?>"
-                       name="<?php echo $key; ?>[zoomOpacity]"
-                       value="<?php echo ! empty( $options['zoomOpacity'] ) ? $options['zoomOpacity'] : ''; ?>">
+                       placeholder="<?php esc_html_e('Zoom Opacity', 'wpfancybox3'); ?>"
+                       name="wpfancybox3[zoomOpacity]"
+                       value="<?php echo ! empty($options['zoomOpacity']) ? esc_attr($options['zoomOpacity']) : ''; ?>">
             </td>
             <td>
-				<?php _e( 'Should image change opacity while zooming.
+                <?php esc_html_e('Should image change opacity while zooming.
                     If opacity is "auto", then opacity will be changed if image and thumbnail have different
-                    aspect ratios.', $key ); ?><br>
-				<?php _e( 'Leave it blank for default value', $key ); ?>
+                    aspect ratios.', 'wpfancybox3'); ?><br>
+                <?php esc_html_e('Leave it blank for default value', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Transition Effect', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Transition Effect', 'wpfancybox3'); ?></strong></th>
             <td>
-                <select name="<?php echo $key; ?>[transitionEffect]">
+                <select name="wpfancybox3[transitionEffect]">
                     <option>
-						<?php _e( 'Disable', $key ); ?>
+                        <?php esc_html_e('Disable', 'wpfancybox3'); ?>
                     </option>
-                    <option value="fade" <?php echo ( ! empty( $options['transitionEffect'] ) && $options['transitionEffect'] === 'fade' ) ? 'selected' : ''; ?>>
-						<?php _e( 'Fade', $key ); ?>
+                    <option value="fade" <?php echo ( ! empty($options['transitionEffect']) && $options['transitionEffect'] === 'fade') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Fade', 'wpfancybox3'); ?>
                     </option>
-                    <option value="slide" <?php echo ( ! empty( $options['transitionEffect'] ) && $options['transitionEffect'] === 'slide' ) ? 'selected' : ''; ?>>
-						<?php _e( 'Slide', $key ); ?>
+                    <option value="slide" <?php echo ( ! empty($options['transitionEffect']) && $options['transitionEffect'] === 'slide') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Slide', 'wpfancybox3'); ?>
                     </option>
-                    <option value="circular" <?php echo ( ! empty( $options['transitionEffect'] ) && $options['transitionEffect'] === 'circular' ) ? 'selected' : ''; ?>>
-						<?php _e( 'Circular', $key ); ?>
+                    <option value="circular" <?php echo ( ! empty($options['transitionEffect']) && $options['transitionEffect'] === 'circular') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Circular', 'wpfancybox3'); ?>
                     </option>
-                    <option value="tube" <?php echo ( ! empty( $options['transitionEffect'] ) && $options['transitionEffect'] === 'tube' ) ? 'selected' : ''; ?>>
-						<?php _e( 'Tube', $key ); ?>
+                    <option value="tube" <?php echo ( ! empty($options['transitionEffect']) && $options['transitionEffect'] === 'tube') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Tube', 'wpfancybox3'); ?>
                     </option>
-                    <option value="zoom-in-out" <?php echo ( ! empty( $options['transitionEffect'] ) && $options['transitionEffect'] === 'zoom-in-out' ) ? 'selected' : ''; ?>>
-						<?php _e( 'Zoom-in-Out', $key ); ?>
+                    <option value="zoom-in-out" <?php echo ( ! empty($options['transitionEffect']) && $options['transitionEffect'] === 'zoom-in-out') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom-in-Out', 'wpfancybox3'); ?>
                     </option>
-                    <option value="rotate" <?php echo ( ! empty( $options['transitionEffect'] ) && $options['transitionEffect'] === 'rotate' ) ? 'selected' : ''; ?>>
-						<?php _e( 'Rotate', $key ); ?>
+                    <option value="rotate" <?php echo ( ! empty($options['transitionEffect']) && $options['transitionEffect'] === 'rotate') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Rotate', 'wpfancybox3'); ?>
                     </option>
                 </select>
 
             </td>
             <td>
-				<?php _e( 'Transition effect between slides', $key ); ?>
+                <?php esc_html_e('Transition effect between slides', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Transition Duration', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Transition Duration', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="number"
-                       placeholder="<?php _e( 'Transition Duration', $key ); ?>"
-                       name="<?php echo $key; ?>[transitionDuration]"
-                       value="<?php echo ! empty( $options['transitionDuration'] ) ? $options['transitionDuration'] : ''; ?>">
+                       placeholder="<?php esc_html_e('Transition Duration', 'wpfancybox3'); ?>"
+                       name="wpfancybox3[transitionDuration]"
+                       value="<?php echo ! empty($options['transitionDuration']) ? esc_attr($options['transitionDuration']) : ''; ?>">
             </td>
             <td>
-				<?php _e( 'Duration in ms for transition animation.', $key ); ?><br>
-				<?php _e( 'Leave it blank for default value', $key ); ?>
+                <?php esc_html_e('Duration in ms for transition animation.', 'wpfancybox3'); ?><br>
+                <?php esc_html_e('Leave it blank for default value', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Slide Class', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Slide Class', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="text"
-                       placeholder="<?php _e( 'Slide Class', $key ); ?>"
-                       name="<?php echo $key; ?>[slideClass]"
-                       value="<?php echo ! empty( $options['slideClass'] ) ? $options['slideClass'] : ''; ?>">
+                       placeholder="<?php esc_html_e('Slide Class', 'wpfancybox3'); ?>"
+                       name="wpfancybox3[slideClass]"
+                       value="<?php echo ! empty($options['slideClass']) ? esc_attr($options['slideClass']) : ''; ?>">
             </td>
             <td>
-				<?php _e( 'Custom CSS class for slide element', $key ); ?>
+                <?php esc_html_e('Custom CSS class for slide element', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Base Class', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Base Class', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="text"
-                       placeholder="<?php _e( 'Base Class', $key ); ?>"
-                       name="<?php echo $key; ?>[baseClass]"
-                       value="<?php echo ! empty( $options['baseClass'] ) ? $options['baseClass'] : ''; ?>">
+                       placeholder="<?php esc_html_e('Base Class', 'wpfancybox3'); ?>"
+                       name="wpfancybox3[baseClass]"
+                       value="<?php echo ! empty($options['baseClass']) ? esc_attr($options['baseClass']) : ''; ?>">
             </td>
             <td>
-				<?php _e( 'Custom CSS class for layout', $key ); ?>
+                <?php esc_html_e('Custom CSS class for layout', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Auto Focus', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Auto Focus', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[autoFocus]" <?php echo ! empty( $options['autoFocus'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[autoFocus]" <?php echo ! empty($options['autoFocus']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Try to focus on the first focusable element after opening', $key ); ?>
+                <?php esc_html_e('Try to focus on the first focusable element after opening', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Back Focus', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Back Focus', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[backFocus]" <?php echo ! empty( $options['backFocus'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[backFocus]" <?php echo ! empty($options['backFocus']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Put focus back to active element after closing', $key ); ?>
+                <?php esc_html_e('Put focus back to active element after closing', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Trap Focus', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Trap Focus', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[trapFocus]" <?php echo ! empty( $options['trapFocus'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[trapFocus]" <?php echo ! empty($options['trapFocus']) ? 'checked' : ''; ?>>
             </td>
             <td>
-				<?php _e( 'Do not let user to focus on element outside modal content', $key ); ?>
+                <?php esc_html_e('Do not let user to focus on element outside modal content', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'FullScreen Auto Start', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('FullScreen Auto Start', 'wpfancybox3'); ?></strong></th>
             <td>
                 <input type="checkbox"
-                       name="<?php echo $key; ?>[fullScreen][autoStart]" <?php echo ! empty( $options['fullScreen']['autoStart'] ) ? 'checked' : ''; ?>>
+                       name="wpfancybox3[fullScreen][autoStart]" <?php echo ! empty($options['fullScreen']['autoStart']) ? 'checked' : ''; ?>>
             </td>
             <td>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Touch', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Touch', 'wpfancybox3'); ?></strong></th>
             <td>
                 <label>
-					<?php _e( 'Allow to drag content vertically', $key ); ?>
+                    <?php esc_html_e('Allow to drag content vertically', 'wpfancybox3'); ?>
                     <input type="checkbox"
-                           name="<?php echo $key; ?>[touch][vertical]" <?php echo ! empty( $options['touch']['vertical'] ) ? 'checked' : ''; ?>>
+                           name="wpfancybox3[touch][vertical]" <?php echo ! empty($options['touch']['vertical']) ? 'checked' : ''; ?>>
                 </label>
                 <p></p>
                 <label>
-					<?php _e( 'Continue movement after releasing mouse/touch when panning', $key ); ?>
+                    <?php esc_html_e('Continue movement after releasing mouse/touch when panning', 'wpfancybox3'); ?>
                     <input type="checkbox"
-                           name="<?php echo $key; ?>[touch][momentum]" <?php echo ! empty( $options['touch']['momentum'] ) ? 'checked' : ''; ?>>
+                           name="wpfancybox3[touch][momentum]" <?php echo ! empty($options['touch']['momentum']) ? 'checked' : ''; ?>>
                 </label>
             </td>
             <td>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Slide Show', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Slide Show', 'wpfancybox3'); ?></strong></th>
             <td>
                 <label>
-					<?php _e( 'Auto Start', $key ); ?>
+                    <?php esc_html_e('Auto Start', 'wpfancybox3'); ?>
                     <input type="checkbox"
-                           name="<?php echo $key; ?>[slideShow][autoStart]" <?php echo ! empty( $options['slideShow']['autoStart'] ) ? 'checked' : ''; ?>>
+                           name="wpfancybox3[slideShow][autoStart]" <?php echo ! empty($options['slideShow']['autoStart']) ? 'checked' : ''; ?>>
                 </label>
                 <p></p>
                 <label>
                     <input type="number" min="0" step="1"
-                           placeholder="<?php _e( 'Speed' ); ?>"
-                           name="<?php echo $key; ?>[slideShow][speed]"
-                           value="<?php echo ! empty( $options['slideShow']['speed'] ) ? $options['slideShow']['speed'] : ''; ?>">
+                           placeholder="<?php esc_html_e('Speed'); ?>"
+                           name="wpfancybox3[slideShow][speed]"
+                           value="<?php echo ! empty($options['slideShow']['speed']) ? esc_attr($options['slideShow']['speed']) : ''; ?>">
                 </label>
             </td>
             <td>
-				<?php _e( 'Leave it blank for default value', $key ); ?>
-            </td>
-        </tr>
-        <tr>
-            <th><strong><?php _e( 'Thumbs', $key ); ?></strong></th>
-            <td>
-                <label>
-					<?php _e( 'Display thumbnails on opening', $key ); ?>
-                    <input type="checkbox"
-                           name="<?php echo $key; ?>[thumbs][autoStart]" <?php echo ! empty( $options['thumbs']['autoStart'] ) ? 'checked' : ''; ?>>
-                </label>
-                <p></p>
-                <label>
-					<?php _e( 'Hide thumbnail grid when closing animation starts', $key ); ?>
-                    <input type="checkbox"
-                           name="<?php echo $key; ?>[thumbs][hideOnClose]" <?php echo ! empty( $options['thumbs']['hideOnClose'] ) ? 'checked' : ''; ?>>
-                </label>
-            </td>
-            <td>
+                <?php esc_html_e('Leave it blank for default value', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Translations', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Thumbs', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <label>
+                    <?php esc_html_e('Display thumbnails on opening', 'wpfancybox3'); ?>
+                    <input type="checkbox"
+                           name="wpfancybox3[thumbs][autoStart]" <?php echo ! empty($options['thumbs']['autoStart']) ? 'checked' : ''; ?>>
+                </label>
+                <p></p>
+                <label>
+                    <?php esc_html_e('Hide thumbnail grid when closing animation starts', 'wpfancybox3'); ?>
+                    <input type="checkbox"
+                           name="wpfancybox3[thumbs][hideOnClose]" <?php echo ! empty($options['thumbs']['hideOnClose']) ? 'checked' : ''; ?>>
+                </label>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <th><strong><?php esc_html_e('Translations', 'wpfancybox3'); ?></strong></th>
             <td>
                 <label>
                     <input
                             type="text"
-                            placeholder="<?php _e( 'Close', $key ); ?>"
-                            name="<?php echo $key; ?>[translation][close]"
-                            value="<?php echo ! empty( $options['translation']['close'] ) ? $options['translation']['close'] : ''; ?>">
+                            placeholder="<?php esc_html_e('Close', 'wpfancybox3'); ?>"
+                            name="wpfancybox3[translation][close]"
+                            value="<?php echo ! empty($options['translation']['close']) ? esc_attr($options['translation']['close']) : ''; ?>">
                 </label>
                 <p></p>
                 <label>
                     <input
                             type="text"
-                            placeholder="<?php _e( 'Next', $key ); ?>"
-                            name="<?php echo $key; ?>[translation][next]"
-                            value="<?php echo ! empty( $options['translation']['next'] ) ? $options['translation']['next'] : ''; ?>">
+                            placeholder="<?php esc_html_e('Next', 'wpfancybox3'); ?>"
+                            name="wpfancybox3[translation][next]"
+                            value="<?php echo ! empty($options['translation']['next']) ? esc_attr($options['translation']['next']) : ''; ?>">
                 </label>
                 <p></p>
                 <label>
                     <input
                             type="text"
-                            placeholder="<?php _e( 'Previous' ); ?>"
-                            name="<?php echo $key; ?>[translation][prev]"
-                            value="<?php echo ! empty( $options['translation']['prev'] ) ? $options['translation']['prev'] : ''; ?>">
+                            placeholder="<?php esc_html_e('Previous'); ?>"
+                            name="wpfancybox3[translation][prev]"
+                            value="<?php echo ! empty($options['translation']['prev']) ? esc_attr($options['translation']['prev']) : ''; ?>">
                 </label>
                 <p></p>
                 <label>
                     <input type="text"
-                           placeholder="<?php _e( 'Error', $key ); ?>"
-                           name="<?php echo $key; ?>[translation][error]"
-                           value="<?php echo ! empty( $options['translation']['error'] ) ? $options['translation']['error'] : ''; ?>">
+                           placeholder="<?php esc_html_e('Error', 'wpfancybox3'); ?>"
+                           name="wpfancybox3[translation][error]"
+                           value="<?php echo ! empty($options['translation']['error']) ? esc_attr($options['translation']['error']) : ''; ?>">
                 </label>
                 <p></p>
                 <label>
 
                     <input
                             type="text"
-                            placeholder="<?php _e( 'Start slideshow', $key ); ?>"
-                            name="<?php echo $key; ?>[translation][start]"
-                            value="<?php echo ! empty( $options['translation']['start'] ) ? $options['translation']['start'] : ''; ?>">
+                            placeholder="<?php esc_html_e('Start slideshow', 'wpfancybox3'); ?>"
+                            name="wpfancybox3[translation][start]"
+                            value="<?php echo ! empty($options['translation']['start']) ? $options['translation']['start'] : ''; ?>">
                 </label>
                 <p></p>
                 <label>
                     <input type="text"
-                           placeholder="<?php _e( 'Pause slideshow', $key ); ?>"
-                           name="<?php echo $key; ?>[translation][pause]"
-                           value="<?php echo ! empty( $options['translation']['pause'] ) ? $options['translation']['pause'] : ''; ?>">
+                           placeholder="<?php esc_html_e('Pause slideshow', 'wpfancybox3'); ?>"
+                           name="wpfancybox3[translation][pause]"
+                           value="<?php echo ! empty($options['translation']['pause']) ? esc_attr($options['translation']['pause']) : ''; ?>">
                 </label>
                 <p></p>
                 <label>
                     <input type="text"
-                           placeholder="<?php _e( 'Full screen', $key ); ?>"
-                           name="<?php echo $key; ?>[translation][full]"
-                           value="<?php echo ! empty( $options['translation']['full'] ) ? $options['translation']['full'] : ''; ?>">
+                           placeholder="<?php esc_html_e('Full screen', 'wpfancybox3'); ?>"
+                           name="wpfancybox3[translation][full]"
+                           value="<?php echo ! empty($options['translation']['full']) ? esc_attr($options['translation']['full']) : ''; ?>">
                 </label>
                 <p></p>
                 <label>
                     <input type="text"
-                           placeholder="<?php _e( 'Thumbnails', $key ); ?>"
-                           name="<?php echo $key; ?>[translation][thumbs]"
-                           value="<?php echo ! empty( $options['translation']['thumbs'] ) ? $options['translation']['thumbs'] : ''; ?>">
+                           placeholder="<?php esc_html_e('Thumbnails', 'wpfancybox3'); ?>"
+                           name="wpfancybox3[translation][thumbs]"
+                           value="<?php echo ! empty($options['translation']['thumbs']) ? esc_attr($options['translation']['thumbs']) : ''; ?>">
                 </label>
                 <p></p>
                 <label>
                     <input type="text"
-                           placeholder="<?php _e( 'Share', $key ); ?>"
-                           name="<?php echo $key; ?>[translation][share]"
-                           value="<?php echo ! empty( $options['translation']['share'] ) ? $options['translation']['share'] : ''; ?>">
+                           placeholder="<?php esc_html_e('Share', 'wpfancybox3'); ?>"
+                           name="wpfancybox3[translation][share]"
+                           value="<?php echo ! empty($options['translation']['share']) ? esc_attr($options['translation']['share']) : ''; ?>">
                 </label>
             </td>
             <td>
-				<?php _e( 'Leave it blank for default value', $key ); ?>
+                <?php esc_html_e('Leave it blank for default value', 'wpfancybox3'); ?>
             </td>
         </tr>
         <tr>
-            <th><strong><?php _e( 'Custom initialization JavaScript Code', $key ); ?></strong></th>
+            <th><strong><?php esc_html_e('Custom initialization JavaScript Code', 'wpfancybox3'); ?></strong></th>
             <td>
                             <textarea
-                                    name="<?php echo $key; ?>[customOptions]"><?php echo ! empty( $options['customOptions'] ) ? $options['customOptions'] : ''; ?></textarea>
+                                    name="wpfancybox3[customOptions]"><?php echo ! empty($options['customOptions']) ? esc_html($options['customOptions']) : ''; ?></textarea>
             </td>
             <td>
-				<?php _e( 'This code will be added into the Fancybox initialization JavaScript code.
-                    Be careful and left it blank if you don\'t understand what you doing.', $key ); ?>
+                <?php esc_html_e('This code will be added into the Fancybox initialization JavaScript code.
+                    Be careful and left it blank if you don\'t understand what you doing.', 'wpfancybox3'); ?>
             </td>
         </tr>
     </table>
-	<?php submit_button(); ?>
+    <?php submit_button(); ?>
 </form>
 <div class="wpfancybox3-footer">
-	<?php _e( 'Please see more documentation and information about license on <a
-            href="http://fancyapps.com/fancybox/3/" target="_blank">fancyapps.com</a>', $key ); ?>
+    <?php echo wp_kses_post(__('Please see more documentation and information about license on <a
+            href="http://fancyapps.com/fancybox/3/" target="_blank">fancyapps.com</a>', 'wpfancybox3')); ?>
 </div>
