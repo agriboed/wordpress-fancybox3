@@ -14,6 +14,10 @@ See example [http://wordpress.v1rus.ru/wp-fancybox-3/]
 
 **Changelog*
 
+1.0.12
+* Escaping fixes
+* Fixed bug with caption in galleries
+
 1.0.10
 * Added support for image caption
 

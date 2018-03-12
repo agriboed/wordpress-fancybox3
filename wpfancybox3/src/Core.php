@@ -37,7 +37,7 @@ class Core
     /**
      * @var string
      */
-    protected static $version = '1.0.11';
+    protected static $version = '1.0.12';
 
     /**
      * @var string
@@ -193,8 +193,6 @@ class Core
         };
 
         $render();
-
-        include $template;
     }
 
     /**
