@@ -418,8 +418,452 @@
             <td>
             </td>
         </tr>
+
         <tr>
-            <th><strong><?php esc_html_e('Translations', 'wpfancybox3'); ?></strong></th>
+            <td colspan="3" class="heading">
+                <?php esc_html_e('Interaction', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th><strong><?php esc_html_e('Click on content', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <select name="wpfancybox3[clickContent]">
+                    <option value="close"
+                        <?php echo ( ! empty($options['clickContent']) &&
+                                     $options['clickContent'] === 'close') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next"
+                        <?php echo ( ! empty($options['clickContent']) &&
+                                     $options['clickContent'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose"
+                        <?php echo ( ! empty($options['clickContent']) &&
+                                     $options['clickContent'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="toggleControls"
+                        <?php echo ( ! empty($options['clickContent']) &&
+                                     $options['clickContent'] === 'toggleControls') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="" <?php echo empty($options['clickContent']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false" <?php echo ( ! empty($options['clickContent']) && $options['clickContent'] === 'false') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+
+            </td>
+            <td>
+                <?php esc_html_e('User clicked on content', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th><strong><?php esc_html_e('Click on a slide', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <select name="wpfancybox3[clickSlide]">
+                    <option value="" <?php echo empty($options['clickSlide']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next" <?php echo ( ! empty($options['clickSlide']) && $options['clickSlide'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose" <?php echo ( ! empty($options['clickSlide']) && $options['clickSlide'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="toggleControls"
+                        <?php echo ( ! empty($options['clickSlide']) &&
+                                     $options['clickSlide'] === 'toggleControls') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="zoom"
+                        <?php echo ( ! empty($options['clickSlide']) &&
+                                     $options['clickSlide'] === 'zoom') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false"
+                        <?php echo ( ! empty($options['clickSlide']) &&
+                                     $options['clickSlide'] === 'false') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+            </td>
+            <td>
+                <?php esc_html_e('User clicked on a slide', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th><strong><?php esc_html_e('Click outside', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <select name="wpfancybox3[clickOutside]">
+                    <option value="" <?php echo empty($options['clickOutside']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next"
+                        <?php echo ( ! empty($options['clickOutside']) &&
+                                     $options['clickOutside'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose"
+                        <?php echo ( ! empty($options['clickOutside']) &&
+                                     $options['clickOutside'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="toggleControls"
+                        <?php echo ( ! empty($options['clickOutside']) &&
+                                     $options['clickOutside'] === 'toggleControls') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="zoom"
+                        <?php echo ( ! empty($options['clickOutside']) &&
+                                     $options['clickOutside'] === 'zoom') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false"
+                        <?php echo ( ! empty($options['clickOutside']) &&
+                                     $options['clickOutside'] === 'false') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+
+            </td>
+            <td>
+                <?php esc_html_e('User clicked outside', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th><strong><?php esc_html_e('Click on content', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <select name="wpfancybox3[clickContent]">
+                    <option value="close"
+                        <?php echo ( ! empty($options['clickContent']) &&
+                                     $options['clickContent'] === 'close') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next"
+                        <?php echo ( ! empty($options['clickContent']) &&
+                                     $options['clickContent'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose"
+                        <?php echo ( ! empty($options['clickContent']) &&
+                                     $options['clickContent'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="toggleControls"
+                        <?php echo ( ! empty($options['clickContent']) &&
+                                     $options['clickContent'] === 'toggleControls') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="" <?php echo empty($options['clickContent']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false" <?php echo ( ! empty($options['clickContent']) && $options['clickContent'] === 'false') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+
+            </td>
+            <td>
+                <?php esc_html_e('User clicked on content', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th><strong><?php esc_html_e('Double click on content', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <select name="wpfancybox3[dblclickContent]">
+                    <option value="close"
+                        <?php echo ( ! empty($options['dblclickContent']) &&
+                                     $options['dblclickContent'] === 'close') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next"
+                        <?php echo ( ! empty($options['dblclickContent']) &&
+                                     $options['dblclickContent'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose"
+                        <?php echo ( ! empty($options['dblclickContent']) &&
+                                     $options['dblclickContent'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="toggleControls"
+                        <?php echo ( ! empty($options['dblclickContent']) &&
+                                     $options['dblclickContent'] === 'toggleControls') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="zoom" <?php echo (!empty($options['dblclickContent']) &&
+                                                 $options['dblclickContent']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false" <?php echo empty($options['dblclickContent']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+
+            </td>
+            <td>
+                <?php esc_html_e('User clicked on content twice', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th><strong><?php esc_html_e('Double click on a slide', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <select name="wpfancybox3[dblclickSlide]">
+                    <option value="close"
+                        <?php echo ( ! empty($options['dblclickSlide']) &&
+                                     $options['dblclickSlide'] === 'close') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next"
+                        <?php echo ( ! empty($options['dblclickSlide']) &&
+                                     $options['dblclickSlide'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose"
+                        <?php echo ( ! empty($options['dblclickSlide']) &&
+                                     $options['dblclickSlide'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="toggleControls"
+                        <?php echo ( ! empty($options['dblclickSlide']) &&
+                                     $options['dblclickSlide'] === 'toggleControls') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="zoom"
+                        <?php echo (!empty($options['dblclickSlide']) &&
+                                    $options['dblclickSlide']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false" <?php echo empty($options['dblclickSlide']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+
+            </td>
+            <td>
+                <?php esc_html_e('User clicked on a slide twice', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th><strong><?php esc_html_e('Double click outside', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <select name="wpfancybox3[dblclickOutside]">
+                    <option value="close"
+                        <?php echo ( ! empty($options['dblclickOutside']) &&
+                                     $options['dblclickOutside'] === 'close') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next"
+                        <?php echo ( ! empty($options['dblclickOutside']) &&
+                                     $options['dblclickOutside'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose"
+                        <?php echo ( ! empty($options['dblclickOutside']) &&
+                                     $options['dblclickOutside'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="toggleControls"
+                        <?php echo ( ! empty($options['dblclickOutside']) &&
+                                     $options['dblclickSlide'] === 'toggleControls') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="zoom"
+                        <?php echo (!empty($options['dblclickOutside']) &&
+                                    $options['dblclickOutside']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false" <?php echo empty($options['dblclickOutside']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+
+            </td>
+            <td>
+                <?php esc_html_e('User clicked outside twice', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th><strong><?php esc_html_e('Click on content via mobile', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <select name="wpfancybox3[mobile][clickContent]">
+                    <option value="close"
+                        <?php echo ( ! empty($options['mobile']['clickContent']) &&
+                                     $options['mobile']['clickContent'] === 'close') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next"
+                        <?php echo ( ! empty($options['mobile']['clickContent']) &&
+                                     $options['mobile']['clickContent'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose"
+                        <?php echo ( ! empty($options['mobile']['clickContent']) &&
+                                     $options['mobile']['clickContent'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="" <?php echo empty($options['mobile']['clickContent']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="zoom"
+                        <?php echo ( ! empty($options['mobile']['clickContent']) &&
+                                     $options['mobile']['clickContent'] === 'zoom') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false"
+                        <?php echo ! empty($options['mobile']['clickContent'] &&
+                                           $options['mobile']['clickContent'] === 'false') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+            </td>
+            <td>
+                <?php esc_html_e('User clicked on content via mobile', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <strong>
+                    <?php esc_html_e('Click on a slide via mobile', 'wpfancybox3'); ?>
+                </strong>
+            </th>
+            <td>
+                <select name="wpfancybox3[mobile][clickSlide]">
+                    <option value="close"
+                        <?php echo ( ! empty($options['mobile']['clickSlide']) &&
+                                     $options['mobile']['clickSlide'] === 'close') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next"
+                        <?php echo ( ! empty($options['mobile']['clickSlide']) &&
+                                     $options['mobile']['clickSlide'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose"
+                        <?php echo ( ! empty($options['mobile']['clickSlide']) &&
+                                     $options['mobile']['clickSlide'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="" <?php echo empty($options['mobile']['clickSlide']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="zoom"
+                        <?php echo ( ! empty($options['mobile']['clickSlide']) &&
+                                     $options['mobile']['clickSlide'] === 'zoom') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false"
+                        <?php echo ! empty($options['mobile']['clickSlide'] &&
+                                           $options['mobile']['clickSlide'] === 'false') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+            </td>
+            <td>
+                <?php esc_html_e('User clicked on a slide via mobile', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th><strong><?php esc_html_e('Double click on a slide via mobile', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <select name="wpfancybox3[mobile][dblclickContent]">
+                    <option value="close"
+                        <?php echo ( ! empty($options['mobile']['dblclickContent']) &&
+                                     $options['mobile']['dblclickContent'] === 'close') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next"
+                        <?php echo ( ! empty($options['mobile']['dblclickContent']) &&
+                                     $options['mobile']['dblclickContent'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose"
+                        <?php echo ( ! empty($options['mobile']['dblclickContent']) &&
+                                     $options['mobile']['dblclickContent'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="toggleControls"
+                        <?php echo ( ! empty($options['mobile']['dblclickContent']) &&
+                                     $options['mobile']['dblclickContent'] === 'toggleControls') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="zoom" <?php echo empty($options['mobile']['dblclickContent']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false"
+                        <?php echo ! empty($options['mobile']['dblclickContent'] &&
+                                           $options['mobile']['dblclickContent'] === 'false') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+            </td>
+            <td>
+                <?php esc_html_e('User clicked twice on a slide via mobile', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th><strong><?php esc_html_e('Double click on content via mobile', 'wpfancybox3'); ?></strong></th>
+            <td>
+                <select name="wpfancybox3[mobile][dblclickSlide]">
+                    <option value="close" <?php echo ( ! empty($options['mobile']['dblclickSlide']) && $options['mobile']['dblclickSlide'] === 'close') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Close instance', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="next" <?php echo ( ! empty($options['mobile']['dblclickSlide']) && $options['mobile']['dblclickSlide'] === 'next') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="nextOrClose" <?php echo ( ! empty($options['mobile']['dblclickSlide']) && $options['mobile']['dblclickSlide'] === 'nextOrClose') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Move to next gallery item or close if gallery has only one item',
+                            'wpfancybox3'); ?>
+                    </option>
+                    <option value="" <?php echo empty($options['mobile']['dblclickSlide']) ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Show/hide controls', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="zoom" <?php echo ( ! empty($options['mobile']['dblclickSlide']) && $options['mobile']['dblclickSlide'] === 'zoom') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Zoom image (if loaded)', 'wpfancybox3'); ?>
+                    </option>
+                    <option value="false" <?php echo ! empty($options['mobile']['dblclickSlide'] && $options['mobile']['dblclickSlide'] === 'false') ? 'selected' : ''; ?>>
+                        <?php esc_html_e('Do nothing', 'wpfancybox3'); ?>
+                    </option>
+                </select>
+            </td>
+            <td>
+                <?php esc_html_e('User clicked twice on a slide via mobile', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" class="heading">
+                <?php esc_html_e('Translations', 'wpfancybox3'); ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th></th>
             <td>
                 <label>
                     <input

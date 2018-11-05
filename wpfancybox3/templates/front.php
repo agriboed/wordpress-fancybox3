@@ -55,7 +55,18 @@
         $s .= 'touch: { vertical: '.(! empty($options['touch']['vertical']) ? 'true' : 'false').', momentum: '.(! empty($options['touch']['momentum']) ? 'true' : 'false').'},';
         $s .= 'slideShow: { autoStart: '.(! empty($options['slideShow']['autoStart']) ? 'true' : 'false').', speed: '.(! empty($options['slideShow']['speed']) ? (int)$options['slideShow']['speed'] : '400').'},';
         $s .= 'thumbs: { autoStart: '.(! empty($options['thumbs']['autoStart']) ? 'true' : 'false').', momentum: '.(! empty($options['thumbs']['hideOnClose']) ? 'true' : 'false').'},';
-
+        $s .= 'clickContent: function(current, event) {return current.type === "image" ? "'.(! empty($options['clickContent']) ? esc_attr($options['clickContent']) : 'zoom').'" : false},';
+        $s .= 'clickSlide: "'.(! empty($options['clickSlide']) ? esc_attr($options['clickSlide']) : 'close').'",';
+        $s .= 'clickOutside: "'.(! empty($options['clickOutside']) ? esc_attr($options['clickOutside']) : 'close').'",';
+        $s .= 'dblclickContent: "'.(! empty($options['dblclickContent']) ? esc_attr($options['dblclickContent']) : 'false').'",';
+        $s .= 'dblclickSlide: "'.(! empty($options['dblclickSlide']) ? esc_attr($options['dblclickSlide']) : 'false').'",';
+        $s .= 'dblclickOutside: "'.(! empty($options['dblclickOutside']) ? esc_attr($options['dblclickOutside']) : 'false').'",';
+        $s .= 'mobile: {  preventCaptionOverlap: false, idleTime: false,';
+        $s .= 'clickContent: function(current, event) { return current.type === "image" ? "'.(! empty($options['mobile']['clickContent']) ? esc_attr($options['mobile']['clickContent']) : 'toggleControls').'" : "close"},';
+        $s .= 'clickSlide: function(current, event) { return current.type === "image" ? "'.(! empty($options['mobile']['clickSlide']) ? esc_attr($options['mobile']['clickSlide']) : 'toggleControls').'" : "close"},';
+        $s .= 'dblclickContent: function(current, event) { return current.type === "image" ? "'.(! empty($options['mobile']['dblclickContent']) ? esc_attr($options['mobile']['dblclickContent']) : 'zoom').'" : false},';
+        $s .= 'dblclickSlide: function(current, event) { return current.type === "image" ? "'.(! empty($options['mobile']['dblclickSlide']) ? esc_attr($options['mobile']['dblclickSlide']) : 'zoom').'" : false}';
+        $s .= '},';
         $s .= "lang : 'default',
 	i18n : {
 		'default' : {

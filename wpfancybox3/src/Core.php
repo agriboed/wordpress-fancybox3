@@ -37,7 +37,7 @@ class Core
     /**
      * @var string
      */
-    protected static $version = '1.0.12';
+    protected static $version = '1.0.13';
 
     /**
      * @var string
